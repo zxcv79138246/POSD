@@ -1,9 +1,12 @@
 #include <iostream>
+#include "./cppunitlite/TestHarness.h"
+#include "utShapes.h"
 
 using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    TestResult tr;
+    TestRegistry::runAllTests(tr);
     return 0;
 }

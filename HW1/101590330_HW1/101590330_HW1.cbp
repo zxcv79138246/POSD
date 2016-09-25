@@ -32,14 +32,30 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-std=c++11" />
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Linker>
 			<Add library="cppunitlite/libCppUnitLite.a" />
 		</Linker>
-		<Unit filename="include/shap.h" />
+		<Unit filename="cppunitlite/Failure.h" />
+		<Unit filename="cppunitlite/SimpleString.h" />
+		<Unit filename="cppunitlite/Test.h" />
+		<Unit filename="cppunitlite/TestHarness.h" />
+		<Unit filename="cppunitlite/TestRegistry.h" />
+		<Unit filename="cppunitlite/TestResult.h" />
+		<Unit filename="include/Circle.h" />
+		<Unit filename="include/Rectangle.h" />
+		<Unit filename="include/ShapeCalculate.h" />
+		<Unit filename="include/Shapes.h" />
+		<Unit filename="include/Triangle.h" />
+		<Unit filename="include/utShapes.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/shap.cpp" />
+		<Unit filename="src/Circle.cpp" />
+		<Unit filename="src/Rectangle.cpp" />
+		<Unit filename="src/ShapeCalculate.cpp" />
+		<Unit filename="src/Shapes.cpp" />
+		<Unit filename="src/Triangle.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

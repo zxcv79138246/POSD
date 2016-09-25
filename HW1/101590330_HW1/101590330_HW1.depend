@@ -1,0 +1,65 @@
+# depslib dependency file v1.0
+1474786619 source:c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\main.cpp
+	<iostream>
+	"./cppunitlite/TestHarness.h"
+	"utShapes.h"
+
+1474605428 c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\cppunitlite\testharness.h
+	"Test.h"
+	"TestResult.h"
+	"Failure.h"
+	"TestRegistry.h"
+
+1474605428 c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\cppunitlite\test.h
+	<cmath>
+	"SimpleString.h"
+
+1474605428 c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\cppunitlite\simplestring.h
+
+1474605428 c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\cppunitlite\testresult.h
+
+1474605428 c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\cppunitlite\failure.h
+	"SimpleString.h"
+
+1474605428 c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\cppunitlite\testregistry.h
+
+1474796193 source:c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\src\circle.cpp
+	"Circle.h"
+
+1474796209 c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\include\circle.h
+	"Shapes.h"
+
+1474793207 source:c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\src\rectangle.cpp
+	"Rectangle.h"
+
+1474793586 c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\include\rectangle.h
+	"Shapes.h"
+
+1474825294 source:c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\src\shapes.cpp
+	"Shapes.h"
+
+1474825686 c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\include\shapes.h
+	<vector>
+
+1474821470 source:c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\src\triangle.cpp
+	"Triangle.h"
+	<math.h>
+
+1474823972 c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\include\triangle.h
+	"Shapes.h"
+
+1474826125 c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\include\utshapes.h
+	"../cppunitlite/TestHarness.h"
+	"Rectangle.h"
+	"Circle.h"
+	"Triangle.h"
+	"ShapeCalculate.h"
+
+1474825730 c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\include\shapecalculate.h
+	<vector>
+	"Shapes.h"
+
+1474826140 source:c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\src\shapecalculate.cpp
+	<iostream>
+	"ShapeCalculate.h"
+
