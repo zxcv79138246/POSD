@@ -1,15 +1,15 @@
-#ifndef SHAPES_H
-#define SHAPES_H
+#ifndef SHAPE_H
+#define SHAPE_H
 
 #include <vector>
 
 using namespace std;
 
-class Shapes
+class Shape
 {
     public:
-        Shapes();
-        virtual ~Shapes();
+        Shape();
+        virtual ~Shape();
         virtual double area() const = 0;
         virtual double perimeter() const = 0;
 
@@ -18,4 +18,4 @@ class Shapes
     private:
 };
 
-#endif // SHAPES_H
+#endif // SHAPE_H

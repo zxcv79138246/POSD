@@ -1,8 +1,8 @@
 #ifndef CIRCLE_H
 #define CIRCLE_H
-#include "Shapes.h"
+#include "Shape.h"
 
-class Circle: public Shapes
+class Circle: public Shape
 {
     public:
         Circle(double centerX, double centerY, double radius);

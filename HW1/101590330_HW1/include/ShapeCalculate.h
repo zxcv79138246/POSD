@@ -2,7 +2,7 @@
 #define SHAPECALCULATE_H
 
 #include <vector>
-#include "Shapes.h"
+#include "Shape.h"
 
 
 class ShapeCalculate
@@ -10,7 +10,8 @@ class ShapeCalculate
     public:
         ShapeCalculate();
         virtual ~ShapeCalculate();
-        double sumOfPerimeter(vector<Shapes *> shapes);
+        double sumOfPerimeter(const vector<Shape *> &shapes);
+        double sumOfArea(const vector<Shape *> &shapes);
 
     protected:
 

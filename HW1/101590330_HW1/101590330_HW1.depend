@@ -26,40 +26,47 @@
 1474796193 source:c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\src\circle.cpp
 	"Circle.h"
 
-1474796209 c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\include\circle.h
-	"Shapes.h"
+1475209512 c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\include\circle.h
+	"Shape.h"
 
 1474793207 source:c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\src\rectangle.cpp
 	"Rectangle.h"
 
-1474793586 c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\include\rectangle.h
-	"Shapes.h"
+1475209512 c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\include\rectangle.h
+	"Shape.h"
 
 1474825294 source:c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\src\shapes.cpp
 	"Shapes.h"
 
-1474825686 c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\include\shapes.h
+1475209184 c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\include\shapes.h
 	<vector>
 
 1474821470 source:c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\src\triangle.cpp
 	"Triangle.h"
 	<math.h>
 
-1474823972 c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\include\triangle.h
-	"Shapes.h"
+1475209545 c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\include\triangle.h
+	"Shape.h"
 
-1474826125 c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\include\utshapes.h
+1475209447 c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\include\utshapes.h
 	"../cppunitlite/TestHarness.h"
+	"Shape.h"
 	"Rectangle.h"
 	"Circle.h"
 	"Triangle.h"
 	"ShapeCalculate.h"
 
-1474825730 c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\include\shapecalculate.h
+1475209432 c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\include\shapecalculate.h
 	<vector>
-	"Shapes.h"
+	"Shape.h"
 
-1474826140 source:c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\src\shapecalculate.cpp
+1475209532 source:c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\src\shapecalculate.cpp
 	<iostream>
 	"ShapeCalculate.h"
+
+1475209519 c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\include\shape.h
+	<vector>
+
+1475209309 source:c:\users\chihchunliu\desktop\posd\posd\hw1\101590330_hw1\src\shape.cpp
+	"Shape.h"
 

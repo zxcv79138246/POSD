@@ -1,8 +1,8 @@
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
-#include "Shapes.h"
+#include "Shape.h"
 
-class Rectangle: public Shapes
+class Rectangle: public Shape
 {
     public:
         Rectangle(double ulcx, double ulcy, double length, double width);

@@ -1,9 +1,9 @@
 #ifndef TRIANGLE_H
 #define TRIANGLE_H
 
-#include "Shapes.h"
+#include "Shape.h"
 
-class Triangle: public Shapes
+class Triangle: public Shape
 {
     public:
         Triangle(double firstX, double firstY, double secondX, double secondY, double thirdX, double thirdY);

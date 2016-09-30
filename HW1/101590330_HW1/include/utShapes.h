@@ -1,4 +1,5 @@
 #include "../cppunitlite/TestHarness.h"
+#include "Shape.h"
 #include "Rectangle.h"
 #include "Circle.h"
 #include "Triangle.h"
@@ -46,12 +47,25 @@ TEST(perimeter, triangle) {
 
 }
 
+TEST(sumOfArea, shapes) {
+    Rectangle r1(0,0,4,2);
+    Circle c1(0,0,10);
+    Triangle t1 (0,0,4,0,0,3);
+    ShapeCalculate calculater;
+    vector<Shape *> shapesVector;
+    shapesVector.push_back(&r1);
+    shapesVector.push_back(&c1);
+    shapesVector.push_back(&t1);
+    DOUBLES_EQUAL(314, calculater.sumOfArea(shapesVector), epsilon)
+
+}
+
 TEST(sumOfPerimeter, shapes) {
     Rectangle r1(0,0,4,2);
     Circle c1(0,0,10);
     Triangle t1 (0,0,4,0,0,3);
     ShapeCalculate calculater;
-    vector<Shapes *> shapesVector;
+    vector<Shape *> shapesVector;
     shapesVector.push_back(&r1);
     shapesVector.push_back(&c1);
     shapesVector.push_back(&t1);
