@@ -1,0 +1,58 @@
+# depslib dependency file v1.0
+1475214979 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\main.cpp
+	<iostream>
+	"./cppunitlite/TestHarness.h"
+	"utShapes.h"
+
+1474605428 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\cppunitlite\testharness.h
+	"Test.h"
+	"TestResult.h"
+	"Failure.h"
+	"TestRegistry.h"
+
+1474605428 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\cppunitlite\test.h
+	<cmath>
+	"SimpleString.h"
+
+1474605428 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\cppunitlite\simplestring.h
+
+1474605428 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\cppunitlite\testresult.h
+
+1474605428 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\cppunitlite\failure.h
+	"SimpleString.h"
+
+1474605428 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\cppunitlite\testregistry.h
+
+1475215444 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\utshapes.h
+	"../cppunitlite/TestHarness.h"
+	"Shape.h"
+	"Rectangle.h"
+	"Circle.h"
+	"Triangle.h"
+	"ShapeCalculate.h"
+
+1475215423 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\shape.h
+	<vector>
+
+1475215418 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\rectangle.h
+	"Shape.h"
+
+1475215402 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\circle.h
+	"Shape.h"
+
+1475215438 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\triangle.h
+	"Shape.h"
+
+1475215433 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\shapecalculate.h
+	<vector>
+	"Shape.h"
+
+1475215359 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\circle.cpp
+	"Circle.h"
+
+1475215367 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\rectangle.cpp
+	"Rectangle.h"
+
+1475215449 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\shape.cpp
+	"Shape.h"
+
