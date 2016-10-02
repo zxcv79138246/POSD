@@ -29,11 +29,15 @@ TEST(perimeter, circle) {
     DOUBLES_EQUAL(30, circ.perimeter(), epsilon);
 }
 
-TEST (constructor, triangle) {
-    Triangle tri (0,0,4,0,0,3);
+TEST (constructor1, triangle) {
+    Triangle tri (0,0,1,1,2,2);
     if (!tri.isValid){
         FAIL("Not a triangle");
     }
+}
+
+TEST (constructor2, triangle) {
+    Triangle tri (0,0,4,0,0,3);
     DOUBLES_EQUAL(4, tri.sideLength1, epsilon);
     DOUBLES_EQUAL(5, tri.sideLength2, epsilon);
     DOUBLES_EQUAL(3, tri.sideLength3, epsilon);
