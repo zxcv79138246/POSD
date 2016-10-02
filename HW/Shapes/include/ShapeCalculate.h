@@ -12,6 +12,8 @@ class ShapeCalculate
         virtual ~ShapeCalculate();
         double sumOfPerimeter(const vector<Shape *> &shapes);
         double sumOfArea(const vector<Shape *> &shapes);
+        Shape* maxArea(const vector<Shape *> &shapes);
+        vector<Shape *> sortByDecreasingPerimeter(const vector<Shape *> &shapes);
 
     protected:
 

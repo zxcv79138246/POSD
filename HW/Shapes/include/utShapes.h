@@ -72,3 +72,35 @@ TEST(sumOfPerimeter, shapes) {
     DOUBLES_EQUAL(84, calculater.sumOfPerimeter(shapesVector), epsilon)
 
 }
+
+TEST(maxArea, shapes) {
+    Rectangle r1(0,0,1,2);
+    Circle c1(0,0,10);
+    Triangle t1 (0,0,4,0,0,3);
+    ShapeCalculate calculater;
+    vector<Shape *> shapesVector;
+    shapesVector.push_back(&r1);
+    shapesVector.push_back(&c1);
+    shapesVector.push_back(&t1);
+
+    DOUBLES_EQUAL(300, calculater.maxArea(shapesVector)->area(), epsilon)
+}
+
+TEST(sortByDecreasingPerimeter, shapes) {
+    Rectangle r1(0,0,6,2);
+    Circle c1(0,0,10);
+    Triangle t1 (0,0,4,0,0,3);
+    ShapeCalculate calculater;
+    vector<Shape *> shapesVector;
+    shapesVector.push_back(&r1);
+    shapesVector.push_back(&c1);
+    shapesVector.push_back(&t1);
+
+    double result[] = {60,16,12};
+    int i = 0;
+    for (Shape* shape: calculater.sortByDecreasingPerimeter(shapesVector)){
+        DOUBLES_EQUAL(result[i], shape->perimeter(), epsilon);
+        i++;
+    }
+
+}

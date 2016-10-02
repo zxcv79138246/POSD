@@ -1,5 +1,6 @@
 #include <iostream>
 #include "ShapeCalculate.h"
+#include <algorithm>
 
 ShapeCalculate::ShapeCalculate()
 {
@@ -27,4 +28,28 @@ double ShapeCalculate::sumOfArea(const vector<Shape *> &shapes) {
     }
 
     return total;
+}
+
+Shape *ShapeCalculate::maxArea(const vector<Shape *> &shapes) {
+    Shape *resultShape;
+    double resultArea = 0;
+    for (Shape *shape: shapes){
+        if (shape->area() > resultArea) {
+            resultArea = shape->area();
+            resultShape = shape;
+        }
+    }
+
+    return resultShape;
+}
+
+bool sortPerimeterDecreasing(const Shape* shape1, const Shape* shape2){
+  return shape1->perimeter() > shape2->perimeter();
+}
+
+vector<Shape *> ShapeCalculate::sortByDecreasingPerimeter(const vector<Shape *> &shapes) {
+    vector<Shape *> sortedShapes = shapes;
+    sort (sortedShapes.begin(), sortedShapes.end(), sortPerimeterDecreasing);
+
+    return sortedShapes;
 }

@@ -23,7 +23,7 @@
 
 1474605428 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\cppunitlite\testregistry.h
 
-1475215582 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\utshapes.h
+1475392390 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\utshapes.h
 	"../cppunitlite/TestHarness.h"
 	"Shape.h"
 	"Rectangle.h"
@@ -43,7 +43,7 @@
 1475215438 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\triangle.h
 	"Shape.h"
 
-1475215433 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\shapecalculate.h
+1475391883 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\shapecalculate.h
 	<vector>
 	"Shape.h"
 
@@ -56,9 +56,10 @@
 1475215449 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\shape.cpp
 	"Shape.h"
 
-1475215382 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\shapecalculate.cpp
+1475392376 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\shapecalculate.cpp
 	<iostream>
 	"ShapeCalculate.h"
+	<algorithm>
 
 1475215393 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\triangle.cpp
 	"Triangle.h"
