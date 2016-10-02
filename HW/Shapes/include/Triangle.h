@@ -11,6 +11,7 @@ class Triangle: public Shape
         double area() const;
         double perimeter() const;
         double sideLength1,sideLength2,sideLength3;
+        bool isValid;
 
     protected:
 

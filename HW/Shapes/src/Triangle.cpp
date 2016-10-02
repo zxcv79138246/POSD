@@ -7,6 +7,12 @@ Triangle::Triangle(double firstX, double firstY, double secondX, double secondY,
     this->sideLength1 = sqrt(pow(firstX-secondX,2) + pow (firstY-secondY,2));
     this->sideLength2 = sqrt(pow(secondX-thirdX,2) + pow (secondY-thirdY,2));
     this->sideLength3 = sqrt(pow(thirdX-firstX,2) + pow (thirdY-firstY,2));
+
+    if (this->sideLength1 == 0 || this->sideLength2 == 0 || this->sideLength3 == 0){
+      this->isValid = false;
+    }else {
+        this->isValid = true;
+    }
 }
 
 Triangle::~Triangle()

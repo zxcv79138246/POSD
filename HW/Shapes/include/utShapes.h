@@ -31,7 +31,7 @@ TEST(perimeter, circle) {
 
 TEST (constructor, triangle) {
     Triangle tri (0,0,4,0,0,3);
-    if (tri.sideLength1 == 0 || tri.sideLength2 == 0 || tri.sideLength3 == 0){
+    if (!tri.isValid){
         FAIL("Not a triangle");
     }
     DOUBLES_EQUAL(4, tri.sideLength1, epsilon);
