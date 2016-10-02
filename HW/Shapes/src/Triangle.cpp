@@ -7,17 +7,24 @@ Triangle::Triangle(double firstX, double firstY, double secondX, double secondY,
     this->sideLength1 = sqrt(pow(firstX-secondX,2) + pow (firstY-secondY,2));
     this->sideLength2 = sqrt(pow(secondX-thirdX,2) + pow (secondY-thirdY,2));
     this->sideLength3 = sqrt(pow(thirdX-firstX,2) + pow (thirdY-firstY,2));
-
-    if (this->sideLength1 == 0 || this->sideLength2 == 0 || this->sideLength3 == 0){
-      this->isValid = false;
-    }else {
-        this->isValid = true;
-    }
+    this->isValid = this->isTrangle(firstX, firstY, secondX, secondY, thirdX, thirdY);
 }
 
 Triangle::~Triangle()
 {
     //dtor
+}
+
+bool Triangle::isTrangle(double firstX, double firstY, double secondX, double secondY, double thirdX, double thirdY) {
+    double m1,m2,m3;
+    m1 = (firstX - secondX) / (firstY - secondY);
+    m2 = (secondX - thirdX) / (secondY - thirdY);
+    m3 = (thirdX - firstX) / (thirdY - firstY);
+
+    if (m1 == m2 || m2 == m3 || m3 == m1){
+        return false;
+    }
+    return true;
 }
 
 double Triangle::area() const {

@@ -17,6 +17,7 @@ class Triangle: public Shape
 
     private:
         double firstX, firstY, secondX, secondY, thirdX, thirdY;
+        bool isTrangle(double firstX, double firstY, double secondX, double secondY, double thirdX, double thirdY);
 };
 
 #endif // TRIANGLE_H
