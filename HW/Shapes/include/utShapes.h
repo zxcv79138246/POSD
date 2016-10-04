@@ -31,8 +31,10 @@ TEST(perimeter, circle) {
 
 TEST (constructor1, triangle) {
     Triangle tri (0,0,1,1,2,2);
-    if (!tri.isValid){
-        FAIL("Not a triangle");
+    try{
+       tri.isTriangle();
+    }catch(string s){
+       CHECK(string("Can not create triangle")==s);
     }
 }
 

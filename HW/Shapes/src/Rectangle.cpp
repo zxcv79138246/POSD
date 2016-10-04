@@ -1,8 +1,9 @@
+#include <iostream>
 #include "Rectangle.h"
 
 Rectangle::Rectangle(double ulcx, double ulcy, double length, double width):x(ulcx),y(ulcy),length(length),width(width)
 {
-    //ctor
+
 }
 
 Rectangle::~Rectangle()

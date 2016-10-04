@@ -9,6 +9,7 @@ class Rectangle: public Shape
         virtual ~Rectangle();
         double area() const;
         double perimeter() const;
+        //void getName();
 
     protected:
 

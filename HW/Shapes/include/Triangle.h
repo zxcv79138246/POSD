@@ -11,13 +11,13 @@ class Triangle: public Shape
         double area() const;
         double perimeter() const;
         double sideLength1,sideLength2,sideLength3;
-        bool isValid;
+        bool isTriangle();
 
     protected:
 
     private:
         double firstX, firstY, secondX, secondY, thirdX, thirdY;
-        bool isTriangle();
+
 };
 
 #endif // TRIANGLE_H
