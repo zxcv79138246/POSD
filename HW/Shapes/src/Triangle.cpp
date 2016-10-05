@@ -1,8 +1,8 @@
 #include "Triangle.h"
 #include <math.h>
 
-Triangle::Triangle(double firstX, double firstY, double secondX, double secondY, double thirdX, double thirdY):
-    firstX(firstX), firstY(firstY), secondX(secondX), secondY(secondY), thirdX(thirdX), thirdY(thirdY)
+Triangle::Triangle(double firstX, double firstY, double secondX, double secondY, double thirdX, double thirdY, string name):
+    firstX(firstX), firstY(firstY), secondX(secondX), secondY(secondY), thirdX(thirdX), thirdY(thirdY), name(name)
 {
     this->sideLength1 = sqrt(pow(firstX-secondX,2) + pow (firstY-secondY,2));
     this->sideLength2 = sqrt(pow(secondX-thirdX,2) + pow (secondY-thirdY,2));
@@ -32,3 +32,12 @@ double Triangle::area() const {
 double Triangle::perimeter() const {
     return sideLength1 + sideLength2 + sideLength3;
 }
+
+void Triangle:: setName(string name) {
+    this->name = name;
+}
+
+string Triangle::getName() {
+    return this->name;
+}
+

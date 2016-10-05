@@ -5,12 +5,15 @@
 class Circle: public Shape
 {
     public:
-        Circle(double centerX, double centerY, double radius);
+        Circle(double centerX, double centerY, double radius, string name);
         virtual ~Circle();
         double area() const;
         double perimeter() const;
+        void setName(string name);
+        string getName();
 
     protected:
+        string name;
 
     private:
         double cx,cy,radius;

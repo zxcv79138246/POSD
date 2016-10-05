@@ -43,13 +43,8 @@ Shape *ShapeCalculate::maxArea(const vector<Shape *> &shapes) {
     return resultShape;
 }
 
-bool sortPerimeterDecreasing(const Shape* shape1, const Shape* shape2){
-  return shape1->perimeter() > shape2->perimeter();
-}
-
-vector<Shape *> ShapeCalculate::sortByDecreasingPerimeter(const vector<Shape *> &shapes) {
-    vector<Shape *> sortedShapes = shapes;
-    sort (sortedShapes.begin(), sortedShapes.end(), sortPerimeterDecreasing);
-
-    return sortedShapes;
+void ShapeCalculate::sortByDecreasingPerimeter(vector<Shape *> &shapes) {
+    sort (shapes.begin(), shapes.end(), [](Shape*shape1,Shape* shape2){
+            return shape1->perimeter() > shape2->perimeter();
+          });
 }

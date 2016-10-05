@@ -13,7 +13,7 @@ class ShapeCalculate
         double sumOfPerimeter(const vector<Shape *> &shapes);
         double sumOfArea(const vector<Shape *> &shapes);
         Shape* maxArea(const vector<Shape *> &shapes);
-        vector<Shape *> sortByDecreasingPerimeter(const vector<Shape *> &shapes);
+        void sortByDecreasingPerimeter(vector<Shape *> &shapes);
 
     protected:
 
