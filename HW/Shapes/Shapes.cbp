@@ -44,19 +44,29 @@
 		<Linker>
 			<Add library="cppunitlite/libCppUnitLite.a" />
 		</Linker>
+		<Unit filename="include/AreaVisitor.h" />
 		<Unit filename="include/Circle.h" />
+		<Unit filename="include/ComboMedia.h" />
 		<Unit filename="include/ComboShape.h" />
+		<Unit filename="include/Media.h" />
+		<Unit filename="include/MediaVister.h" />
 		<Unit filename="include/Rectangle.h" />
 		<Unit filename="include/Shape.h" />
 		<Unit filename="include/ShapeCalculate.h" />
+		<Unit filename="include/ShapeMedia.h" />
 		<Unit filename="include/Triangle.h" />
 		<Unit filename="include/utShapes.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/AreaVisitor.cpp" />
 		<Unit filename="src/Circle.cpp" />
+		<Unit filename="src/ComboMedia.cpp" />
 		<Unit filename="src/ComboShape.cpp" />
+		<Unit filename="src/Media.cpp" />
+		<Unit filename="src/MediaVister.cpp" />
 		<Unit filename="src/Rectangle.cpp" />
 		<Unit filename="src/Shape.cpp" />
 		<Unit filename="src/ShapeCalculate.cpp" />
+		<Unit filename="src/ShapeMedia.cpp" />
 		<Unit filename="src/Triangle.cpp" />
 		<Extensions>
 			<code_completion />
