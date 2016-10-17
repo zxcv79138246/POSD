@@ -3,9 +3,9 @@
 
 #include "Media.h"
 #include "Shape.h"
-#include "AreaVisitor.h"
 
 class AreaVisitor;
+class PerimeterVisitor;
 class ShapeMedia: public Media
 {
     public:
@@ -13,7 +13,8 @@ class ShapeMedia: public Media
         virtual ~ShapeMedia();
         double area();
         double perimeter();
-        void accept(AreaVisitor* areaVisitor);
+        void accept(AreaVisitor& areaVisitor);
+        void accept(PerimeterVisitor& perimeterVisitor);
         Shape* getShape();
 
     protected:

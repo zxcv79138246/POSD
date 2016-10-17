@@ -2,11 +2,9 @@
 #define COMBOMEDIA_H
 
 #include "Media.h"
-#include "AreaVisitor.h"
-
-using namespace std;
 
 class AreaVisitor;
+class PerimeterVisitor;
 class ComboMedia : public Media
 {
     public:
@@ -15,8 +13,8 @@ class ComboMedia : public Media
         void add(Media* media);
         double area();
         double perimeter();
-        void accept(AreaVisitor* areaVisitor);
-        vector<Media*> getCombo();
+        void accept(AreaVisitor& areaVisitor);
+        void accept(PerimeterVisitor& perimeterVisitor);
 
     protected:
 

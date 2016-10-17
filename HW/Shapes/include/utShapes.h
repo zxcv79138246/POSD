@@ -9,6 +9,7 @@
 #include "ShapeMedia.h"
 #include "ComboMedia.h"
 #include "AreaVisitor.h"
+#include "PerimeterVisitor.h"
 
 using namespace std;
 
@@ -189,9 +190,9 @@ TEST (newShapeMediaPerimeter ,shapeMedia) {
 }
 
 TEST (hexagonArea ,comboMedia) {
-    Triangle t1 (0,4,3,0,3,8,"tri1"); //12
-    Triangle t2 (11,4,8,0,8,8,"tri2"); //12
-    Rectangle r1(3,8,5,8,"r1");  //40
+    Triangle t1 (0, 2*sqrt(3), -1, sqrt(3),0,0,"tri1"); //1.732050
+    Triangle t2 (2, 2*sqrt(3), 2, 0, 3, sqrt(3), "tri2"); //1.732050
+    Rectangle r1(0, 2*sqrt(3), 2, 2*sqrt(3),"r1");  //6.928230
 
     ShapeMedia shapeMediaT1(&t1);
     ShapeMedia shapeMediaT2(&t2);
@@ -202,13 +203,13 @@ TEST (hexagonArea ,comboMedia) {
     hex.add(&shapeMediaT2);
     hex.add(&shapeMediaR1);
 
-    DOUBLES_EQUAL(64, hex.area(), epsilon)
+    DOUBLES_EQUAL(10.392305, hex.area(), epsilon)
 }
 
 TEST (hexagonPerimeter ,comboMedia) {
-    Triangle t1 (0,4,3,0,3,8,"tri1"); //18
-    Triangle t2 (11,4,8,0,8,8,"tri2"); //18
-    Rectangle r1(3,8,5,8,"r1");  //26
+    Triangle t1 (0, 2*sqrt(3), -1, sqrt(3),0,0,"tri1");//7.464101
+    Triangle t2 (2, 2*sqrt(3), 2, 0, 3, sqrt(3), "tri2"); //7.464101
+    Rectangle r1(0, 2*sqrt(3), 2, 2*sqrt(3),"r1");  //10.928203
 
     ShapeMedia shapeMediaT1(&t1);
     ShapeMedia shapeMediaT2(&t2);
@@ -219,36 +220,73 @@ TEST (hexagonPerimeter ,comboMedia) {
     hex.add(&shapeMediaT2);
     hex.add(&shapeMediaR1);
 
-    DOUBLES_EQUAL(62, hex.perimeter(), epsilon)
+    DOUBLES_EQUAL(25.856406, hex.perimeter(), epsilon)
 }
 
 TEST (ShapeMedia ,AreaVisitor) {
-    Triangle t1 (0,4,3,0,3,8,"tri1"); //12
+    Triangle t1 (0, 2*sqrt(3), -1, sqrt(3),0,0,"tri1"); //1.732050
 
     ShapeMedia shapeMediaT1(&t1);
 
     AreaVisitor areaVisitor;
-    shapeMediaT1.accept(&areaVisitor);
+    shapeMediaT1.accept(areaVisitor);
 
-    DOUBLES_EQUAL(12, areaVisitor.getArea(), epsilon)
+    DOUBLES_EQUAL(1.732050, areaVisitor.getArea(), epsilon)
+}
+
+TEST (ShapeMedia ,PerimeterVisitor) {
+    Triangle t1 (0, 2*sqrt(3), -1, sqrt(3),0,0,"tri1");//7.464101
+
+    ShapeMedia shapeMediaT1(&t1);
+
+    PerimeterVisitor perimeterVisitor;
+    shapeMediaT1.accept(perimeterVisitor);
+
+    DOUBLES_EQUAL(7.464101, perimeterVisitor.getPerimeter(), epsilon)
 }
 
 TEST (ComboMedia ,AreaVisitor) {
-    Triangle t1 (0,4,3,0,3,8,"tri1"); //12
-    Triangle t2 (11,4,8,0,8,8,"tri2"); //12
-    Rectangle r1(3,8,5,8,"r1");  //40
+    Triangle t1 (0, 2*sqrt(3), -1, sqrt(3),0,0,"tri1"); //1.732050
+    Triangle t2 (2, 2*sqrt(3), 2, 0, 3, sqrt(3), "tri2"); //1.732050
+    Rectangle r1(0, 2*sqrt(3), 2, 2*sqrt(3),"r1");  //6.928230
 
     ShapeMedia shapeMediaT1(&t1);
     ShapeMedia shapeMediaT2(&t2);
     ShapeMedia shapeMediaR1(&r1);
 
-    ComboMedia hex;
-    hex.add(&shapeMediaT1);
-    hex.add(&shapeMediaT2);
-    hex.add(&shapeMediaR1);
+    ComboMedia combo1;
+    combo1.add(&shapeMediaT1);
+    combo1.add(&shapeMediaR1);
+
+    ComboMedia combo2;
+    combo2.add(&combo1);
+    combo2.add(&shapeMediaT2);
 
     AreaVisitor areaVisitor;
-    hex.accept(&areaVisitor);
+    combo2.accept(areaVisitor);
 
-    DOUBLES_EQUAL(64, areaVisitor.getArea(), epsilon)
+    DOUBLES_EQUAL(10.392305, areaVisitor.getArea(), epsilon)
+}
+
+TEST (ComboMedia ,PerimeterVisitor) {
+    Triangle t1 (0, 2*sqrt(3), -1, sqrt(3),0,0,"tri1");//7.464101
+    Triangle t2 (2, 2*sqrt(3), 2, 0, 3, sqrt(3), "tri2"); //7.464101
+    Rectangle r1(0, 2*sqrt(3), 2, 2*sqrt(3),"r1");  //10.928203
+
+    ShapeMedia shapeMediaT1(&t1);
+    ShapeMedia shapeMediaT2(&t2);
+    ShapeMedia shapeMediaR1(&r1);
+
+    ComboMedia combo1;
+    combo1.add(&shapeMediaT1);
+    combo1.add(&shapeMediaR1);
+
+    ComboMedia combo2;
+    combo2.add(&combo1);
+    combo2.add(&shapeMediaT2);
+
+    PerimeterVisitor perimeterVisitor;
+    combo2.accept(perimeterVisitor);
+
+    DOUBLES_EQUAL(25.856406, perimeterVisitor.getPerimeter(), epsilon)
 }

@@ -1,12 +1,9 @@
 #ifndef AREAVISITOR_H
 #define AREAVISITOR_H
 
-#include "ShapeMedia.h"
-#include "ComboMedia.h"
+#include "MediaVisitor.h"
 
-class ShapeMedia;
-class ComboMedia;
-class AreaVisitor
+class AreaVisitor: public MediaVisitor
 {
     public:
         AreaVisitor();
@@ -18,7 +15,7 @@ class AreaVisitor
     protected:
 
     private:
-        double area;
+        double area = 0;
 };
 
 #endif // AREAVISITOR_H

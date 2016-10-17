@@ -15,9 +15,7 @@ void AreaVisitor::visitShapeMedia(ShapeMedia *shapeMedia) {
 }
 
 void AreaVisitor::visitComboMedia(ComboMedia *comboMedia){
-    for (Media *m: comboMedia->getCombo()){
-        m->accept(this);
-    }
+
 }
 
 double AreaVisitor::getArea() const {

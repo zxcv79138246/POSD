@@ -49,7 +49,7 @@
 		<Unit filename="include/ComboMedia.h" />
 		<Unit filename="include/ComboShape.h" />
 		<Unit filename="include/Media.h" />
-		<Unit filename="include/MediaVister.h" />
+		<Unit filename="include/MediaVisitor.h" />
 		<Unit filename="include/Rectangle.h" />
 		<Unit filename="include/Shape.h" />
 		<Unit filename="include/ShapeCalculate.h" />
@@ -62,7 +62,7 @@
 		<Unit filename="src/ComboMedia.cpp" />
 		<Unit filename="src/ComboShape.cpp" />
 		<Unit filename="src/Media.cpp" />
-		<Unit filename="src/MediaVister.cpp" />
+		<Unit filename="src/MediaVisitor.cpp" />
 		<Unit filename="src/Rectangle.cpp" />
 		<Unit filename="src/Shape.cpp" />
 		<Unit filename="src/ShapeCalculate.cpp" />
