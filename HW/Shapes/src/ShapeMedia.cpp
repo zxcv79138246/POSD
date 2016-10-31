@@ -15,11 +15,11 @@ ShapeMedia::~ShapeMedia()
 
 
 double ShapeMedia::area() {
-    return this->shape->area() ;
+    return this->shape->area();
 }
 
 double ShapeMedia::perimeter() {
-    return this->shape->perimeter() ;
+    return this->shape->perimeter();
 }
 
 void ShapeMedia::accept(AreaVisitor& areaVisitor){

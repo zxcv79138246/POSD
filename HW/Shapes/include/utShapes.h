@@ -14,6 +14,7 @@
 #include "MediaBuilder.h"
 #include "ShapeMediaBuilder.h"
 #include "ComboMediaBuilder.h"
+#include "TextMedia.h"
 #include <stack>
 
 using namespace std;
@@ -349,4 +350,12 @@ TEST (BuildHouse ,ComboMediaBuilder) {
     mbs.top()->getMedia()->accept(&descriptionVisitor);
 
     CHECK(string("combo(combo(combo(r(10 0 15 5) c(12 5 2) )r(0 0 25 20) )t(0 20 16 32 25 20) )") == descriptionVisitor.getDescription());
+}
+
+TEST (TextMedia ,TextMedia) {
+    Rectangle r1(10, 0, 15, 5,"r1");
+    string text = string("test");
+    TextMedia textMedia(r1, text);
+
+   CHECK(string("test") == textMedia.getText());
 }

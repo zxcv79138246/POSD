@@ -23,7 +23,7 @@
 
 1474605428 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\cppunitlite\testregistry.h
 
-1477900320 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\utshapes.h
+1477903645 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\utshapes.h
 	"../cppunitlite/TestHarness.h"
 	"Shape.h"
 	"Rectangle.h"
@@ -40,6 +40,7 @@
 	"MediaBuilder.h"
 	"ShapeMediaBuilder.h"
 	"ComboMediaBuilder.h"
+	"TextMedia.h"
 	<stack>
 
 1477848264 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\shape.h
@@ -107,7 +108,7 @@
 1476506506 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\media.cpp
 	"Media.h"
 
-1477855867 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\shapemedia.cpp
+1477902476 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\shapemedia.cpp
 	"ShapeMedia.h"
 	"AreaVisitor.h"
 	"PerimeterVisitor.h"
@@ -155,7 +156,7 @@
 1477845622 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\mediabuilder.cpp
 	"MediaBuilder.h"
 
-1477899967 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\mediabuilder.h
+1477903743 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\mediabuilder.h
 	"Shape.h"
 	"Media.h"
 	"ShapeMedia.h"
@@ -166,4 +167,15 @@
 
 1477899956 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\shapemediabuilder.h
 	<MediaBuilder.h>
+
+1477903412 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\textmedia.h
+	"Media.h"
+	"Shape.h"
+	"Rectangle.h"
+
+1477903282 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\textmedia.cpp
+	"TextMedia.h"
+	"AreaVisitor.h"
+	"PerimeterVisitor.h"
+	"DescriptionVisitor.h"
 
