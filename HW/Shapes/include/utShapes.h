@@ -328,21 +328,22 @@ TEST (Circle ,ShapeMediaBuilder) {
 TEST (BuildHouse ,ComboMediaBuilder) {
     DescriptionVisitor descriptionVisitor;
     stack<MediaBuilder *> mbs;
-
+    mbs.push(new ComboMediaBuilder());
+    mbs.push(new ComboMediaBuilder());
     mbs.push(new ComboMediaBuilder());
     Rectangle r1(10, 0, 15, 5,"r1");
     mbs.top()->buildShapeMedia(&r1);
     Circle c1(12,5,2, "c1");
     mbs.top()->buildShapeMedia(&c1);
-
     Media* cm1 = mbs.top()->getMedia();
-    mbs.push(new ComboMediaBuilder());
+    mbs.pop();
+
     mbs.top()->buildComboMedia(cm1);
     Rectangle r2(0, 0, 25, 20,"r2");
     mbs.top()->buildShapeMedia(&r2);
-
     Media* cm2 = mbs.top()->getMedia();
-    mbs.push(new ComboMediaBuilder());
+    mbs.pop();
+
     mbs.top()->buildComboMedia(cm2);
     Triangle t1(0, 20, 16, 32, 25, 20, "t1");
     mbs.top()->buildShapeMedia(&t1);
