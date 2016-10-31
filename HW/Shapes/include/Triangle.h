@@ -10,6 +10,7 @@ class Triangle: public Shape
         virtual ~Triangle();
         double area() const;
         double perimeter() const;
+        string description() const;
         double sideLength1,sideLength2,sideLength3;
         bool isTriangle();
         void setName(string name);

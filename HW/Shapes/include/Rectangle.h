@@ -12,6 +12,7 @@ class Rectangle: public Shape
         virtual ~Rectangle();
         double area() const;
         double perimeter() const;
+        string description() const;
         void setName(string name);
         string getName();
 

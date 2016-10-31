@@ -41,3 +41,9 @@ string Triangle::getName() {
     return this->name;
 }
 
+string Triangle::description() const{
+    std::stringstream ss;
+    ss << "t(" << firstX << " " << firstY << " " << secondX << " " << secondY << " " << thirdX << " " << thirdY << ") ";
+    return ss.str();
+}
+

@@ -8,7 +8,7 @@ using namespace std;
 
 class AreaVisitor;
 class PerimeterVisitor;
-
+class DescriptionVisitor;
 class Media
 {
     public:
@@ -18,6 +18,7 @@ class Media
         virtual double perimeter() = 0;
         virtual void accept(AreaVisitor& areaVisitor) = 0;
         virtual void accept(PerimeterVisitor& perimeterVisitor) = 0;
+        virtual void accept(DescriptionVisitor* descriptionVisitor) = 0;
 
     protected:
 

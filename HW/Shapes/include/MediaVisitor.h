@@ -3,6 +3,7 @@
 
 #include "ShapeMedia.h"
 #include "ComboMedia.h"
+#include <String>
 
 class MediaVisitor
 {

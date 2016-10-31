@@ -20,6 +20,12 @@ double Rectangle::perimeter() const {
     return (this->length + this->width) *2;
 }
 
+string Rectangle::description() const{
+    stringstream ss;
+    ss << "r(" << x << " " << y << " " << length << " " << width << ") ";
+    return ss.str();
+}
+
 void Rectangle:: setName(string name) {
     this->name = name;
 }

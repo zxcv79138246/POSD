@@ -5,6 +5,7 @@
 
 class AreaVisitor;
 class PerimeterVisitor;
+class DescriptionVisitor;
 class ComboMedia : public Media
 {
     public:
@@ -15,6 +16,7 @@ class ComboMedia : public Media
         double perimeter();
         void accept(AreaVisitor& areaVisitor);
         void accept(PerimeterVisitor& perimeterVisitor);
+        void accept(DescriptionVisitor* descriptionVisitor);
 
     protected:
 

@@ -34,3 +34,6 @@ string ComboShape::getName() {
     return this->name;
 }
 
+string ComboShape::description() const{
+}
+

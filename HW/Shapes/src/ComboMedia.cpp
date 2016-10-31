@@ -1,6 +1,7 @@
 #include "ComboMedia.h"
 #include "AreaVisitor.h"
 #include "PerimeterVisitor.h"
+#include "DescriptionVisitor.h"
 
 ComboMedia::ComboMedia()
 {
@@ -44,4 +45,11 @@ void ComboMedia::accept(PerimeterVisitor& perimeterVisitor){
     for (Media *m: combo){
         m->accept(perimeterVisitor);
     }
+}
+
+void ComboMedia::accept(DescriptionVisitor* descriptionVisitor){
+    for (Media *m: combo){
+        m->accept(descriptionVisitor);
+    }
+    descriptionVisitor->visitComboMedia(this);
 }

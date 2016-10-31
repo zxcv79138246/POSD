@@ -12,6 +12,7 @@ class ComboShape : public Shape
         void addShape(Shape* shape);
         double area() const;
         double perimeter() const;
+        string description() const;
         void setName(string name);
         string getName();
 

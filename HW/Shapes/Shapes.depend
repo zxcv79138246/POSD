@@ -23,7 +23,7 @@
 
 1474605428 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\cppunitlite\testregistry.h
 
-1476694483 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\utshapes.h
+1477900320 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\utshapes.h
 	"../cppunitlite/TestHarness.h"
 	"Shape.h"
 	"Rectangle.h"
@@ -36,29 +36,35 @@
 	"ComboMedia.h"
 	"AreaVisitor.h"
 	"PerimeterVisitor.h"
+	"DescriptionVisitor.h"
+	"MediaBuilder.h"
+	"ShapeMediaBuilder.h"
+	"ComboMediaBuilder.h"
+	<stack>
 
-1475678798 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\shape.h
+1477848264 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\shape.h
 	<string>
 	<vector>
+	<sstream>
 
-1475687829 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\rectangle.h
+1477847833 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\rectangle.h
 	"Shape.h"
 	<string>
 
-1475679019 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\circle.h
+1477847700 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\circle.h
 	"Shape.h"
 
-1475688173 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\triangle.h
+1477847959 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\triangle.h
 	"Shape.h"
 
 1475665220 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\shapecalculate.h
 	<vector>
 	"Shape.h"
 
-1475687807 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\circle.cpp
+1477854688 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\circle.cpp
 	"Circle.h"
 
-1475687793 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\rectangle.cpp
+1477847927 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\rectangle.cpp
 	<iostream>
 	"Rectangle.h"
 
@@ -70,40 +76,42 @@
 	"ShapeCalculate.h"
 	<algorithm>
 
-1475688183 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\triangle.cpp
+1477848093 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\triangle.cpp
 	"Triangle.h"
 	<math.h>
 
-1475678854 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\comboshape.h
+1477848158 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\comboshape.h
 	"Shape.h"
 	"ShapeCalculate.h"
 
-1475678914 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\comboshape.cpp
+1477848337 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\comboshape.cpp
 	"ComboShape.h"
 
-1476694266 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\media.h
+1477856256 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\media.h
 	<string>
 	<vector>
 
-1476694237 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\shapemedia.h
+1477855849 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\shapemedia.h
 	"Media.h"
 	"Shape.h"
 
-1476694387 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\combomedia.cpp
+1477857114 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\combomedia.cpp
 	"ComboMedia.h"
 	"AreaVisitor.h"
 	"PerimeterVisitor.h"
+	"DescriptionVisitor.h"
 
-1476694217 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\combomedia.h
+1477856151 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\combomedia.h
 	"Media.h"
 
 1476506506 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\media.cpp
 	"Media.h"
 
-1476694375 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\shapemedia.cpp
+1477855867 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\shapemedia.cpp
 	"ShapeMedia.h"
 	"AreaVisitor.h"
 	"PerimeterVisitor.h"
+	"DescriptionVisitor.h"
 
 1476691713 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\areavisitor.h
 	"MediaVisitor.h"
@@ -118,9 +126,10 @@
 	"ShapeMedia.h"
 	"ComboMedia.h"
 
-1476685899 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\mediavisitor.h
+1477846591 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\mediavisitor.h
 	"ShapeMedia.h"
 	"ComboMedia.h"
+	<String>
 
 1476683652 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\mediavisitor.cpp
 	"MediaVisitor.h"
@@ -130,4 +139,31 @@
 
 1476693769 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\perimetervisitor.cpp
 	"PerimeterVisitor.h"
+
+1477899952 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\combomediabuilder.cpp
+	"ComboMediaBuilder.h"
+
+1477899958 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\combomediabuilder.h
+	<MediaBuilder.h>
+
+1477856929 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\descriptionvisitor.cpp
+	"DescriptionVisitor.h"
+
+1477846645 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\descriptionvisitor.h
+	"MediaVisitor.h"
+
+1477845622 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\mediabuilder.cpp
+	"MediaBuilder.h"
+
+1477899967 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\mediabuilder.h
+	"Shape.h"
+	"Media.h"
+	"ShapeMedia.h"
+	"ComboMedia.h"
+
+1477899961 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\shapemediabuilder.cpp
+	"ShapeMediaBuilder.h"
+
+1477899956 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\shapemediabuilder.h
+	<MediaBuilder.h>
 

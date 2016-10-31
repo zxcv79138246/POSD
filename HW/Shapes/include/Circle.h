@@ -9,6 +9,7 @@ class Circle: public Shape
         virtual ~Circle();
         double area() const;
         double perimeter() const;
+        string description() const;
         void setName(string name);
         string getName();
 

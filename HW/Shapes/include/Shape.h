@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <sstream>
 
 using namespace std;
 
@@ -13,6 +14,7 @@ class Shape
         virtual ~Shape();
         virtual double area() const = 0;
         virtual double perimeter() const = 0;
+        virtual string description() const = 0;
         virtual void setName(string name) = 0;
         virtual string getName() = 0;
 
@@ -20,6 +22,7 @@ class Shape
 
     protected:
         string name;
+        string desc;
 
     private:
 

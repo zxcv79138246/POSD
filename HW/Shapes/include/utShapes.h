@@ -10,6 +10,11 @@
 #include "ComboMedia.h"
 #include "AreaVisitor.h"
 #include "PerimeterVisitor.h"
+#include "DescriptionVisitor.h"
+#include "MediaBuilder.h"
+#include "ShapeMediaBuilder.h"
+#include "ComboMediaBuilder.h"
+#include <stack>
 
 using namespace std;
 
@@ -289,4 +294,59 @@ TEST (ComboMedia ,PerimeterVisitor) {
     combo2.accept(perimeterVisitor);
 
     DOUBLES_EQUAL(25.856406, perimeterVisitor.getPerimeter(), epsilon)
+}
+
+TEST (Circle ,DescriptionVisitor) {
+    DescriptionVisitor descriptionVisitor;
+    Circle c1(0,0,5, "c1");
+    ShapeMedia shapeMediaC1(&c1);
+    shapeMediaC1.accept(&descriptionVisitor);
+    CHECK(string("c(0 0 5) ") == descriptionVisitor.getDescription());
+
+}
+
+TEST (BuildFalse ,ShapeMediaBuilder) {
+    ShapeMediaBuilder smb;
+    Circle c1(0,0,5, "c1");
+    try{
+        smb.buildShapeMedia(&c1);
+    }catch(string s) {
+        CHECK(string("null point ex") == s);
+    }
+}
+
+TEST (Circle ,ShapeMediaBuilder) {
+    DescriptionVisitor descriptionVisitor;
+    ShapeMediaBuilder smb;
+    Circle c1(0,0,5, "c1");
+    smb.buildShapeMedia(&c1);
+    smb.getMedia()->accept(&descriptionVisitor);
+    CHECK(string("c(0 0 5) ") == descriptionVisitor.getDescription());
+}
+
+TEST (BuildHouse ,ComboMediaBuilder) {
+    DescriptionVisitor descriptionVisitor;
+    stack<MediaBuilder *> mbs;
+
+    mbs.push(new ComboMediaBuilder());
+    Rectangle r1(10, 0, 15, 5,"r1");
+    mbs.top()->buildShapeMedia(&r1);
+    Circle c1(12,5,2, "c1");
+    mbs.top()->buildShapeMedia(&c1);
+
+    Media* cm1 = mbs.top()->getMedia();
+    mbs.push(new ComboMediaBuilder());
+    mbs.top()->buildComboMedia(cm1);
+    Rectangle r2(0, 0, 25, 20,"r2");
+    mbs.top()->buildShapeMedia(&r2);
+
+    Media* cm2 = mbs.top()->getMedia();
+    mbs.push(new ComboMediaBuilder());
+    mbs.top()->buildComboMedia(cm2);
+    Triangle t1(0, 20, 16, 32, 25, 20, "t1");
+    mbs.top()->buildShapeMedia(&t1);
+
+    mbs.top()->getMedia()->accept(&descriptionVisitor);
+
+    CHECK(string("combo(combo(combo(r(10 0 15 5) c(12 5 2) )r(0 0 25 20) )t(0 20 16 32 25 20) )") == descriptionVisitor.getDescription());
 }
