@@ -10,6 +10,8 @@ class TextVisitor: public MediaVisitor
         virtual ~TextVisitor();
         void visitShapeMedia(ShapeMedia *shapeMedia){};
         void visitComboMedia(ComboMedia *comboMedia){};
+        void visitComboMediaPre(ComboMedia *comboMedia){};
+        void visitComboMediaPost(ComboMedia *comboMedia){};
         void visitTextMedia(TextMedia *textMedia);
         string getText();
 

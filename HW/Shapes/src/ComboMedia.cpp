@@ -48,10 +48,11 @@ void ComboMedia::accept(PerimeterVisitor& perimeterVisitor){
 }
 
 void ComboMedia::accept(DescriptionVisitor* descriptionVisitor){
+    descriptionVisitor->visitComboMediaPre(this);
     for (Media *m: combo){
         m->accept(descriptionVisitor);
     }
-    descriptionVisitor->visitComboMedia(this);
+    descriptionVisitor->visitComboMediaPost(this);
 }
 
 bool isCombo(Media* m) {
