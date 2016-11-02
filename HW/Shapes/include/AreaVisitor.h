@@ -10,6 +10,7 @@ class AreaVisitor: public MediaVisitor
         virtual ~AreaVisitor();
         void visitShapeMedia(ShapeMedia *shapeMedia);
         void visitComboMedia(ComboMedia *comboMedia);
+        void visitTextMedia(TextMedia *textMedia){};
         double getArea() const;
 
     protected:

@@ -27,3 +27,4 @@ void ShapeMediaBuilder::buildShapeMedia(Shape * s){
 Media *ShapeMediaBuilder::getMedia(){
     return shapeMedia;
 }
+

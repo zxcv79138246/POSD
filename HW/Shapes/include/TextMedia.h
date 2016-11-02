@@ -2,30 +2,30 @@
 #define TEXTMEDIA_H
 
 #include "Media.h"
-#include "Shape.h"
-#include "Rectangle.h"
+#include "Text.h"
 
 class AreaVisitor;
 class PerimeterVisitor;
 class DescriptionVisitor;
+class TextVisitor;
 class TextMedia: public Media
 {
     public:
-        TextMedia(Rectangle boundingbox, string text);
+        TextMedia(Text text);
         virtual ~TextMedia();
         double area();
         double perimeter();
         void accept(AreaVisitor& areaVisitor);
         void accept(PerimeterVisitor& perimeterVisitor);
         void accept(DescriptionVisitor* descriptionVisitor);
-        Rectangle getRectangle() const;
-        string getText() const;
+        void accept(TextVisitor* textVisitor);
+        void removeMedia(Media* m);
+        Text getText() const;
 
     protected:
 
     private:
-        Rectangle rectangle;
-        string text;
+        Text text;
 };
 
 #endif // TEXTMEDIA_H

@@ -5,6 +5,7 @@
 #include "Media.h"
 #include "ShapeMedia.h"
 #include "ComboMedia.h"
+#include "DescriptionVisitor.h"
 
 class MediaBuilder
 {

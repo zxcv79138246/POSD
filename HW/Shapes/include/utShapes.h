@@ -1,4 +1,9 @@
 #include "../cppunitlite/TestHarness.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
+#include <stack>
+
 #include "Shape.h"
 #include "Rectangle.h"
 #include "Circle.h"
@@ -14,12 +19,18 @@
 #include "MediaBuilder.h"
 #include "ShapeMediaBuilder.h"
 #include "ComboMediaBuilder.h"
+#include "Text.h"
 #include "TextMedia.h"
-#include <stack>
+#include "TextVisitor.h"
 
 using namespace std;
 
 const double epsilon = 0.000001;
+
+static inline SimpleString StringFrom(const string& value)
+{
+    return SimpleString(value.c_str());
+}
 
 TEST(area, rectangle) {
     Rectangle rect(0,0,4,2, "rect");
@@ -351,12 +362,51 @@ TEST (BuildHouse ,ComboMediaBuilder) {
     mbs.top()->getMedia()->accept(&descriptionVisitor);
 
     CHECK(string("combo(combo(combo(r(10 0 15 5) c(12 5 2) )r(0 0 25 20) )t(0 20 16 32 25 20) )") == descriptionVisitor.getDescription());
+
 }
 
 TEST (TextMedia ,TextMedia) {
     Rectangle r1(10, 0, 15, 5,"r1");
-    string text = string("test");
-    TextMedia textMedia(r1, text);
+    string str = "test";
+    Text text(r1, str);
+    TextMedia textMedia(text);
+    TextVisitor tv;
+    textMedia.accept(&tv);
+    CHECK("test" == tv.getText());
+}
 
-   CHECK(string("test") == textMedia.getText());
+TEST (RemoveMedia ,ComboMediaBuilder) {
+    DescriptionVisitor descriptionVisitor;
+    stack<MediaBuilder *> mbs;
+    mbs.push(new ComboMediaBuilder());
+    mbs.push(new ComboMediaBuilder());
+    mbs.push(new ComboMediaBuilder());
+    Rectangle r1(10, 0, 15, 5,"r1");
+    mbs.top()->buildShapeMedia(&r1);
+    Circle c1(12,5,2, "c1");
+    mbs.top()->buildShapeMedia(&c1);
+    Media* cm1 = mbs.top()->getMedia();
+    mbs.pop();
+
+    mbs.top()->buildComboMedia(cm1);
+    Rectangle r2(0, 0, 25, 20,"r2");
+    mbs.top()->buildShapeMedia(&r2);
+    Media* cm2 = mbs.top()->getMedia();
+    mbs.pop();
+
+    mbs.top()->buildComboMedia(cm2);
+    Triangle t1(0, 20, 16, 32, 25, 20, "t1");
+    mbs.top()->buildShapeMedia(&t1);
+
+    ShapeMediaBuilder smb;
+    Rectangle rd(0,0,25, 20, "rd");
+    try{
+        smb.buildShapeMedia(&rd);
+    }catch(string s) {
+        CHECK(string("null point ex") == s);
+    }
+    mbs.top()->getMedia()->removeMedia(smb.getMedia());
+    mbs.top()->getMedia()->accept(&descriptionVisitor);
+
+    CHECK_EQUAL(descriptionVisitor.getDescription(), "combo(combo(combo(r(10 0 15 5) c(12 5 2) ))t(0 20 16 32 25 20) )");
 }

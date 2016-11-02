@@ -10,6 +10,7 @@ class PerimeterVisitor: public MediaVisitor
         virtual ~PerimeterVisitor();
         void visitShapeMedia(ShapeMedia *shapeMedia);
         void visitComboMedia(ComboMedia *comboMedia);
+        void visitTextMedia(TextMedia *textMedia){};
         double getPerimeter() const;
 
     protected:

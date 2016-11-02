@@ -3,6 +3,8 @@
 
 #include "ShapeMedia.h"
 #include "ComboMedia.h"
+#include "TextMedia.h"
+#include "Text.h"
 #include <String>
 
 class MediaVisitor
@@ -12,6 +14,7 @@ class MediaVisitor
         virtual ~MediaVisitor();
         virtual void visitShapeMedia(ShapeMedia *shapMedia) = 0;
         virtual void visitComboMedia(ComboMedia *comboMedia) = 0;
+        virtual void visitTextMedia(TextMedia *textMedia) = 0;
 
     protected:
 

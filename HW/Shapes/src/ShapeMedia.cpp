@@ -38,3 +38,6 @@ void ShapeMedia::accept(DescriptionVisitor* descriptionVisitor){
     descriptionVisitor->visitShapeMedia(this);
 }
 
+void ShapeMedia::removeMedia(Media* m){
+}
+

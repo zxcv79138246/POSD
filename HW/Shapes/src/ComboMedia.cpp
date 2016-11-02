@@ -53,3 +53,32 @@ void ComboMedia::accept(DescriptionVisitor* descriptionVisitor){
     }
     descriptionVisitor->visitComboMedia(this);
 }
+
+bool isCombo(Media* m) {
+    DescriptionVisitor dv;
+    m->accept(&dv);
+    if (!(dv.getDescription()).find("combo")){
+        return true;
+    }
+    return false;
+
+}
+
+void ComboMedia::removeMedia(Media* m) {
+    DescriptionVisitor descriptionVisitor;
+    DescriptionVisitor removeDV;
+    m->accept(&removeDV);
+    string removeDesc = removeDV.getDescription();
+    for (vector<Media*>::iterator it = combo.begin(); it!= combo.end(); it++){
+        DescriptionVisitor itDV;
+        (*it)->accept(&itDV);
+        if (isCombo(*it)){
+            (*it)->removeMedia(m);
+        }else {
+            if (itDV.getDescription() == removeDesc){
+                combo.erase(it);
+                break;
+            }
+        }
+    }
+}

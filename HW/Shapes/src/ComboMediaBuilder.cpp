@@ -1,4 +1,5 @@
 #include "ComboMediaBuilder.h"
+#include <iostream>
 
 ComboMediaBuilder::ComboMediaBuilder()
 {

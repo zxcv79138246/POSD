@@ -2,9 +2,10 @@
 #include "AreaVisitor.h"
 #include "PerimeterVisitor.h"
 #include "DescriptionVisitor.h"
+#include "TextVisitor.h"
 
 
-TextMedia::TextMedia(Rectangle boundingbox, string text): rectangle(boundingbox),text(text)
+TextMedia::TextMedia(Text text): text(text)
 {
     //ctor
 }
@@ -15,11 +16,11 @@ TextMedia::~TextMedia()
 }
 
 double TextMedia::area() {
-    return this->rectangle.area() ;
+
 }
 
 double TextMedia::perimeter() {
-    return this->rectangle.perimeter();
+
 }
 
 void TextMedia::accept(AreaVisitor& areaVisitor){
@@ -34,10 +35,13 @@ void TextMedia::accept(DescriptionVisitor* descriptionVisitor){
 
 }
 
-Rectangle TextMedia::getRectangle() const{
-    return rectangle;
+void TextMedia::accept(TextVisitor* textVisitor){
+    textVisitor->visitTextMedia(this);
 }
 
-string TextMedia::getText() const{
+Text TextMedia::getText() const{
     return text;
+}
+
+void TextMedia::removeMedia(Media* m){
 }

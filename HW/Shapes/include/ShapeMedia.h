@@ -18,6 +18,7 @@ class ShapeMedia: public Media
         void accept(PerimeterVisitor& perimeterVisitor);
         void accept(DescriptionVisitor* descriptionVisitor);
         Shape* getShape();
+        void removeMedia(Media* m);
 
     protected:
 

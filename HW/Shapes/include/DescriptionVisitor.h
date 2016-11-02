@@ -11,6 +11,7 @@ class DescriptionVisitor: public MediaVisitor
         virtual ~DescriptionVisitor();
         void visitShapeMedia(ShapeMedia *shapeMedia);
         void visitComboMedia(ComboMedia *comboMedia);
+        void visitTextMedia(TextMedia *textMedia){};
         string getDescription() const;
 
     protected:
