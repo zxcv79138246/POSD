@@ -408,5 +408,5 @@ TEST (RemoveMedia ,ComboMediaBuilder) {
     mbs.top()->getMedia()->removeMedia(smb.getMedia());
     mbs.top()->getMedia()->accept(&descriptionVisitor);
 
-    CHECK_EQUAL(descriptionVisitor.getDescription(), "combo(combo(combo(r(10 0 15 5) c(12 5 2) ))t(0 20 16 32 25 20) )");
+    CHECK(descriptionVisitor.getDescription() == "combo(combo(combo(r(10 0 15 5) c(12 5 2) ))t(0 20 16 32 25 20) )");
 }
