@@ -23,7 +23,7 @@
 
 1474605428 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\cppunitlite\testregistry.h
 
-1480157506 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\utshapes.h
+1480317757 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\utshapes.h
 	"../cppunitlite/TestHarness.h"
 	<stdio.h>
 	<stdlib.h>
@@ -47,6 +47,9 @@
 	"Text.h"
 	"TextMedia.h"
 	"TextVisitor.h"
+	"Document.h"
+	"MyDocument.h"
+	"MediaDirector.h"
 
 1477848264 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\shape.h
 	<string>
@@ -202,4 +205,34 @@
 
 1478077558 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\textvisitor.h
 	"MediaVisitor.h"
+
+1480157708 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\document.cpp
+	"Document.h"
+
+1480174421 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\document.h
+	<string>
+	<cstdio>
+	<iostream>
+	<fstream>
+
+1480174146 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\mydocument.h
+	"Document.h"
+
+1480174956 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\mydocument.cpp
+	"MyDocument.h"
+
+1480317678 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\mediadirector.cpp
+	"MediaDirector.h"
+
+1480269232 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\mediadirector.h
+	<string>
+	<stack>
+	<sstream>
+	<cstdlib>
+	"MediaBuilder.h"
+	"ComboMediaBuilder.h"
+	"ShapeMediaBuilder.h"
+	"Rectangle.h"
+	"Triangle.h"
+	"Circle.h"
 

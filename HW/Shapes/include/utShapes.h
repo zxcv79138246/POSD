@@ -22,6 +22,9 @@
 #include "Text.h"
 #include "TextMedia.h"
 #include "TextVisitor.h"
+#include "Document.h"
+#include "MyDocument.h"
+#include "MediaDirector.h"
 
 using namespace std;
 
@@ -409,4 +412,92 @@ TEST (RemoveMedia ,ComboMediaBuilder) {
     mbs.top()->getMedia()->accept(&descriptionVisitor);
 
     CHECK(descriptionVisitor.getDescription() == "combo(combo(combo(r(10 0 15 5) c(12 5 2) ))t(0 20 16 32 25 20) )");
+}
+
+TEST (BuildCombo ,ComboMediaBuilder) {
+    DescriptionVisitor descriptionVisitor;
+    stack<MediaBuilder *> mbs;
+    mbs.push(new ComboMediaBuilder());
+
+    //r(0 0 3 2) c(0 0 5)
+    Rectangle r1(0, 0, 3, 2,"r1");
+    mbs.top()->buildShapeMedia(&r1);
+    Circle c1(0,0,5, "c1");
+    mbs.top()->buildShapeMedia(&c1);
+    mbs.push(new ComboMediaBuilder());
+
+    //combo(r(0 0 5 4) c(0 0 10)
+    Rectangle r2(0, 0, 5, 4,"r2");
+    mbs.top()->buildShapeMedia(&r2);
+    Circle c2(0,0,10, "c2");
+    mbs.top()->buildShapeMedia(&c2);
+    Media* cm1 = mbs.top()->getMedia();
+    mbs.pop();
+    mbs.top()->buildComboMedia(cm1);
+
+    //combo(r(0 1 8 7) c(0 1 10)
+    mbs.push(new ComboMediaBuilder());
+    Rectangle r3(0, 1, 8, 7,"r3");
+    mbs.top()->buildShapeMedia(&r3);
+    Circle c3(0,1,10, "c3");
+    mbs.top()->buildShapeMedia(&c3);
+    Media* cm2 = mbs.top()->getMedia();
+    mbs.pop();
+    mbs.top()->buildComboMedia(cm2);
+
+
+    mbs.top()->getMedia()->accept(&descriptionVisitor);
+
+    CHECK(string("combo(r(0 0 3 2) c(0 0 5) combo(r(0 0 5 4) c(0 0 10) )combo(r(0 1 8 7) c(0 1 10) ))") == descriptionVisitor.getDescription());
+}
+
+
+TEST (ReadFile, Document) {
+    Document* doc = new MyDocument();
+    string line;
+    try{
+        line = doc->openDocument("myShape.txt");
+    }catch(string s) {
+        CHECK(string("file is not existed.") == s);
+    }
+
+    CHECK(line == "combo(r(0 0 3 2) c(0 0 5) combo(r(0 0 5 4) c(0 0 10) )combo(r(0 1 8 7) c(0 1 10) ))");
+}
+
+TEST (MediaDirector, Document) {
+    DescriptionVisitor descriptionVisitor;
+    Document* doc = new MyDocument();
+    MediaDirector* md = new MediaDirector();
+    string line;
+    try{
+        line = doc->openDocument("myShape.txt");
+    }catch(string s) {
+        CHECK(string("file is not existed.") == s);
+    }
+
+    stack<MediaBuilder *> mbs;
+    md->setMediaBuilder(&mbs);
+    md->concrete(line);
+
+    mbs.top()->getMedia()->accept(&descriptionVisitor);
+    CHECK(string("combo(r(0 0 3 2) c(0 0 5) combo(r(0 0 5 4) c(0 0 10) )combo(r(0 1 8 7) c(0 1 10) ))") == descriptionVisitor.getDescription());
+}
+
+TEST (MediaDirector2, Document) {
+    DescriptionVisitor descriptionVisitor;
+    Document* doc = new MyDocument();
+    MediaDirector* md = new MediaDirector();
+    string line;
+    try{
+        line = doc->openDocument("myShape1.txt");
+    }catch(string s) {
+        CHECK(string("file is not existed.") == s);
+    }
+
+    stack<MediaBuilder *> mbs;
+    md->setMediaBuilder(&mbs);
+    md->concrete(line);
+
+    mbs.top()->getMedia()->accept(&descriptionVisitor);
+    CHECK(string("combo(combo(combo(r(10 0 15 5) c(12 5 2) ))t(0 20 16 32 25 20) )") == descriptionVisitor.getDescription());
 }
