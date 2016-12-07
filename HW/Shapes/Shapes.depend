@@ -23,7 +23,7 @@
 
 1474605428 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\cppunitlite\testregistry.h
 
-1480317757 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\utshapes.h
+1481083383 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\utshapes.h
 	"../cppunitlite/TestHarness.h"
 	<stdio.h>
 	<stdlib.h>
@@ -50,6 +50,7 @@
 	"Document.h"
 	"MyDocument.h"
 	"MediaDirector.h"
+	"Command.h"
 
 1477848264 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\shape.h
 	<string>
@@ -152,7 +153,7 @@
 1476693769 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\perimetervisitor.cpp
 	"PerimeterVisitor.h"
 
-1477991499 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\combomediabuilder.cpp
+1481112721 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\combomediabuilder.cpp
 	"ComboMediaBuilder.h"
 	<iostream>
 
@@ -175,7 +176,7 @@
 	"ComboMedia.h"
 	"DescriptionVisitor.h"
 
-1477991555 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\shapemediabuilder.cpp
+1481112715 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\shapemediabuilder.cpp
 	"ShapeMediaBuilder.h"
 
 1477991528 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\shapemediabuilder.h
@@ -221,7 +222,7 @@
 1480174956 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\mydocument.cpp
 	"MyDocument.h"
 
-1480317678 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\mediadirector.cpp
+1481107233 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\mediadirector.cpp
 	"MediaDirector.h"
 
 1480269232 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\mediadirector.h
@@ -235,4 +236,21 @@
 	"Rectangle.h"
 	"Triangle.h"
 	"Circle.h"
+
+1481119144 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\command.h
+	<string>
+	<iostream>
+	<vector>
+	<sstream>
+	<cstring>
+	<stack>
+	"MediaBuilder.h"
+	"ShapeMediaBuilder.h"
+	"ComboMediaBuilder.h"
+	"Circle.h"
+	"Rectangle.h"
+	"Triangle.h"
+
+1481113356 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\command.cpp
+	"Command.h"
 

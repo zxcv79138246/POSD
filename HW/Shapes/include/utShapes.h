@@ -25,6 +25,7 @@
 #include "Document.h"
 #include "MyDocument.h"
 #include "MediaDirector.h"
+#include "Command.h"
 
 using namespace std;
 
@@ -500,4 +501,8 @@ TEST (MediaDirector2, Document) {
 
     mbs.top()->getMedia()->accept(&descriptionVisitor);
     CHECK(string("combo(combo(combo(r(10 0 15 5) c(12 5 2) ))t(0 20 16 32 25 20) )") == descriptionVisitor.getDescription());
+}
+
+TEST (Command, Command) {
+    Command* cmd = new Command();
 }
