@@ -30,6 +30,7 @@ class Command
         vector<string> sliceVector;
         vector<Media*> mds;
         map<string, Media*> mapName;
+        map<string, string> comboContent;
 
 
         void analysisInput();

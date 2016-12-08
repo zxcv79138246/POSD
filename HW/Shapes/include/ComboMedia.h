@@ -19,6 +19,8 @@ class ComboMedia : public Media
         void accept(PerimeterVisitor& perimeterVisitor);
         void accept(DescriptionVisitor* descriptionVisitor);
         void removeMedia(Media* m);
+        vector<Media*> getCombo();
+
 
     protected:
 

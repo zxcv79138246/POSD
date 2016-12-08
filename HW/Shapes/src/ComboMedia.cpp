@@ -83,3 +83,7 @@ void ComboMedia::removeMedia(Media* m) {
         }
     }
 }
+
+vector<Media*> ComboMedia:: getCombo(){
+    return combo;
+}
