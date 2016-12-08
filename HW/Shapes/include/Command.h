@@ -8,6 +8,8 @@
 #include <cstring>
 #include <stack>
 #include <map>
+#include <fstream>
+#include <cstdio>
 #include "MediaBuilder.h"
 #include "ShapeMediaBuilder.h"
 #include "ComboMediaBuilder.h"

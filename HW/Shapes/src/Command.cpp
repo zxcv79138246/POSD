@@ -14,13 +14,13 @@ Command::~Command()
 }
 
 void Command:: analysisInput() {
+    sliceVector.clear();
     char *cstr = new char[cmdText.size() + 1];;
     strcpy(cstr, cmdText.c_str());
     const char *token = " =?{}\"";
     char *p;
     p = strtok(cstr, token);
     string temp;
-
     while (p) {
         sliceVector.push_back(temp.assign(p));
         p = strtok(NULL, token);
@@ -87,25 +87,40 @@ void Command:: analysisInput() {
         map<string, Media*>::iterator iter;
         map<string, string>::iterator contentIter;
         iter = mapName.find(sliceVector[1]);
-        Media* toDel = iter->second;
-        if (sliceVector[2] == "from"){
-            iter = mapName.find(sliceVector[3]);
-            Media* target = iter->second;
-            target->removeMedia(toDel);
-            int index = comboContent[sliceVector[3]].find(sliceVector[1]);
-            comboContent[sliceVector[3]].erase(index, sliceVector[1].length());
-        }else {
-            for(iter = mapName.begin(); iter != mapName.end(); iter++){
-                iter->second->removeMedia(toDel);
-            }
-            iter = mapName.find(sliceVector[1]);
-            mapName.erase(iter);
-            for (contentIter=comboContent.begin(); contentIter!=comboContent.end(); contentIter++){
-                int index = comboContent[contentIter->first].find(sliceVector[1]);
-                comboContent[contentIter->first].erase(index, sliceVector[1].length());
+        if (iter != mapName.end()){
+            Media* toDel = iter->second;
+            if (sliceVector[2] == "from" && sliceVector.size()<2){
+                cout << "from"<< endl;
+                iter = mapName.find(sliceVector[3]);
+                Media* target = iter->second;
+                target->removeMedia(toDel);
+                int index = comboContent[sliceVector[3]].find(sliceVector[1]);
+                comboContent[sliceVector[3]].erase(index, sliceVector[1].length());
+            }else {
+                cout << "all"<< endl;
+                for(iter = mapName.begin(); iter != mapName.end(); iter++){
+                    iter->second->removeMedia(toDel);
+                }
+                iter = mapName.find(sliceVector[1]);
+                mapName.erase(iter);
+                for (contentIter=comboContent.begin(); contentIter!=comboContent.end(); contentIter++){
+                    int index = comboContent[contentIter->first].find(sliceVector[1]);
+                    comboContent[contentIter->first].erase(index, sliceVector[1].length());
+                }
             }
         }
+
     }else if (sliceVector[0] == "save"){
+        fstream fp;
+        map<string, Media*>::iterator iter;
+        DescriptionVisitor dv;
+        fp.open(sliceVector[3], ios::out);
+        iter = mapName.find(sliceVector[1]);
+        Media* target = iter->second;
+        target->accept(&dv);
+        fp << dv.getDescription();
+        fp.close();
+        cout << sliceVector[1] << " saved to " << sliceVector[3] <<endl;
     }else if (sliceVector[0] == "load"){
     }else {
         cout << "else!" << endl;
