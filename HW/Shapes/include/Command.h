@@ -7,6 +7,7 @@
 #include <sstream>
 #include <cstring>
 #include <stack>
+#include <map>
 #include "MediaBuilder.h"
 #include "ShapeMediaBuilder.h"
 #include "ComboMediaBuilder.h"
@@ -28,6 +29,9 @@ class Command
         string cmdText;
         vector<string> sliceVector;
         vector<Media*> mds;
+        map<string, Media*> mapName;
+
+
         void analysisInput();
         Circle* makeCir(string cir, string name);
         Rectangle* makeRec(string rec, string name);

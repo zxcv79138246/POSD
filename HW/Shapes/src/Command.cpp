@@ -41,6 +41,7 @@ void Command:: analysisInput() {
                 size_t rightEnd = content.find(")", 7);
                 smb.buildShapeMedia(makeCir(content.substr(7,rightEnd-7), name));
                 mds.push_back(smb.getMedia());
+                mapName[name]= smb.getMedia();
                 cout << content << endl;
             }
         }else if (content[0] == 'R') {
@@ -48,18 +49,37 @@ void Command:: analysisInput() {
             size_t rightEnd = content.find(")", 10);
             smb.buildShapeMedia(makeRec(content.substr(10,rightEnd-7), name));
             mds.push_back(smb.getMedia());
+            mapName[name]= smb.getMedia();
             cout << content << endl;
         }else if (content[0] == 'T') {
             ShapeMediaBuilder smb;
             size_t rightEnd = content.find(")", 9);
             smb.buildShapeMedia(makeTri(content.substr(9,rightEnd-7), name));
             mds.push_back(smb.getMedia());
+            mapName[name]= smb.getMedia();
             cout << content << endl;
         }else if (content[0] == 'c' && content[1] == 'o'){
             cout << "combo!!" << endl;
             ComboMediaBuilder cmb;
             makeCombo(&cmb, sliceVector[3], name);
         }
+    }else if (sliceVector[0] == "add" && sliceVector[1] == "1"){
+//        map<string, Media*>::iterator iter;
+//        iter = mapName.find(sliceVector[1]);
+//        Media* toAdd = iter->second;
+//        iter = mapName.find(sliceVector[3]);
+//        Media* target = iter->second;
+//        target->add(toAdd);
+    }else if (sliceVector[0] != "def" && sliceVector[1] == "area"){
+        cout << "getArea!!"<<endl;
+        map<string, Media*>::iterator iter;
+        iter = mapName.find(sliceVector[0]);
+        cout << iter->second->area()<<endl;
+    }else if (sliceVector[0] != "def" && sliceVector[1] == "perimeter"){
+        cout << "getPerimeter!!"<<endl;
+        map<string, Media*>::iterator iter;
+        iter = mapName.find(sliceVector[0]);
+        cout << iter->second->perimeter()<<endl;
     }
 }
 
@@ -107,8 +127,6 @@ Triangle* Command::makeTri(string tri, string name){
 }
 
 void Command::makeCombo(ComboMediaBuilder* cmb, string content, string name) {
-    cout<< "content: " << content <<endl;
-    cout<< "name: " << name << endl;
     char *cstr = new char[content.size() + 1];
     strcpy(cstr, content.c_str());
     const char *token = ",";
@@ -116,11 +134,14 @@ void Command::makeCombo(ComboMediaBuilder* cmb, string content, string name) {
     p = strtok(cstr, token);
     string temp;
     vector<string> shapes;
+    map<string, Media*>::iterator iter;
     while (p) {
         shapes.push_back(temp.assign(p));
         p = strtok(NULL, token);
     }
     for (int j = 0; j< shapes.size(); j++) {
-        cout << shapes[j] << endl;
+        iter = mapName.find(shapes[j]);
+        cmb->buildComboMedia(iter->second);
     }
+    mapName[name]= cmb->getMedia();
 }

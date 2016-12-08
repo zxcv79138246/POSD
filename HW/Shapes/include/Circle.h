@@ -18,7 +18,7 @@ class Circle: public Shape
 
     private:
         double cx,cy,radius;
-        const double PI = 3;
+        const double PI = 3.14;
 };
 
 #endif // CIRCLE_H
