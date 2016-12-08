@@ -20,6 +20,7 @@ class TextMedia: public Media
         void accept(DescriptionVisitor* descriptionVisitor);
         void accept(TextVisitor* textVisitor);
         void removeMedia(Media* m);
+        void add(Media* m);
         Text getText() const;
 
     protected:

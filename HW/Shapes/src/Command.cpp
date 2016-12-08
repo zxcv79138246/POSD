@@ -63,14 +63,42 @@ void Command:: analysisInput() {
             ComboMediaBuilder cmb;
             makeCombo(&cmb, sliceVector[3], name);
         }
-    }else if (sliceVector[0] == "add" && sliceVector[1] == "1"){
-//        map<string, Media*>::iterator iter;
-//        iter = mapName.find(sliceVector[1]);
-//        Media* toAdd = iter->second;
-//        iter = mapName.find(sliceVector[3]);
-//        Media* target = iter->second;
-//        target->add(toAdd);
-    }else if (sliceVector[0] != "def" && sliceVector[1] == "area"){
+    }else if (sliceVector[0] == "add"){
+        cout << "add!!" <<endl;
+        DescriptionVisitor dv;
+        map<string, Media*>::iterator iter;
+        iter = mapName.find(sliceVector[1]);
+        Media* toAdd = iter->second;
+        iter = mapName.find(sliceVector[3]);
+        Media* target = iter->second;
+        target->add(toAdd);
+        target->accept(&dv);
+        cout << sliceVector[3] << " = " << sliceVector[3] << "{" << sliceVector[1] <<" }" << " = " << dv.getDescription() << endl;
+    }else if (sliceVector[0] == "show") {
+        map<string, Media*>::iterator iter;
+        for(iter = mapName.begin(); iter != mapName.end(); iter++){
+            cout << iter->first<<endl;
+        }
+    }else if (sliceVector[0] == "delete"){
+        DescriptionVisitor dv;
+        map<string, Media*>::iterator iter;
+        iter = mapName.find(sliceVector[1]);
+        Media* toDel = iter->second;
+        if (sliceVector[2] == "from"){
+            iter = mapName.find(sliceVector[3]);
+            Media* target = iter->second;
+            target->removeMedia(toDel);
+        }else {
+            for(iter = mapName.begin(); iter != mapName.end(); iter++){
+                iter->second->removeMedia(toDel);
+            }
+            iter = mapName.find(sliceVector[1]);
+            mapName.erase(iter);
+        }
+    }
+
+
+    else if (sliceVector[0] != "def" && sliceVector[1] == "area"){
         cout << "getArea!!"<<endl;
         map<string, Media*>::iterator iter;
         iter = mapName.find(sliceVector[0]);

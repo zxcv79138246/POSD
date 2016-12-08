@@ -19,6 +19,7 @@ class ShapeMedia: public Media
         void accept(DescriptionVisitor* descriptionVisitor);
         Shape* getShape();
         void removeMedia(Media* m);
+        void add(Media* media);
 
     protected:
 

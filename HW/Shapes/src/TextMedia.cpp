@@ -45,3 +45,6 @@ Text TextMedia::getText() const{
 
 void TextMedia::removeMedia(Media* m){
 }
+
+void TextMedia::add(Media* m){
+}
