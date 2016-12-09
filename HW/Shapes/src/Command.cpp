@@ -3,8 +3,10 @@
 Command::Command()
 {
     while(getline(cin,cmdText)) {
-        analysisInput();
-        sliceVector.clear();
+        if (cmdText.size()>1){
+            analysisInput();
+            sliceVector.clear();
+        }
     }
 }
 
@@ -130,29 +132,31 @@ void Command:: analysisInput() {
     }else if (sliceVector[0] == "load"){
     }else {
         cout << "else!" << endl;
-        char *cstr2 = new char[cmdText.size() + 1];;
-        strcpy(cstr2, cmdText.c_str());
-        const char *token2 = ".?";
-        char *p2;
-        p2 = strtok(cstr2, token2);
-        string temp2;
-        vector<string> sliceVector2;
+        if (sliceVector.size()>1) {
+            char *cstr2 = new char[cmdText.size() + 1];;
+            strcpy(cstr2, cmdText.c_str());
+            const char *token2 = ".?";
+            char *p2;
+            p2 = strtok(cstr2, token2);
+            string temp2;
+            vector<string> sliceVector2;
 
-        while (p2) {
-            sliceVector2.push_back(temp2.assign(p2));
-            p2 = strtok(NULL, token2);
-        }
+            while (p2) {
+                sliceVector2.push_back(temp2.assign(p2));
+                p2 = strtok(NULL, token2);
+            }
 
-        if (sliceVector2[1] == "area"){
-            cout << "getArea!!"<<endl;
-            map<string, Media*>::iterator iter;
-            iter = mapName.find(sliceVector2[0]);
-            cout << iter->second->area()<<endl;
-        }else if (sliceVector2[1] == "perimeter"){
-            cout << "getPerimeter!!"<<endl;
-            map<string, Media*>::iterator iter;
-            iter = mapName.find(sliceVector2[0]);
-            cout << iter->second->perimeter()<<endl;
+            if (sliceVector2[1] == "area"){
+                cout << "getArea!!"<<endl;
+                map<string, Media*>::iterator iter;
+                iter = mapName.find(sliceVector2[0]);
+                cout << iter->second->area()<<endl;
+            }else if (sliceVector2[1] == "perimeter"){
+                cout << "getPerimeter!!"<<endl;
+                map<string, Media*>::iterator iter;
+                iter = mapName.find(sliceVector2[0]);
+                cout << iter->second->perimeter()<<endl;
+            }
         }
     }
 }
