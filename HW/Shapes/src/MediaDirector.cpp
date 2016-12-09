@@ -15,7 +15,7 @@ void MediaDirector::setMediaBuilder(std::stack<MediaBuilder *> *mbs){
 }
 
 void MediaDirector::concrete(string content){
-
+    mb->push(new ShapeMediaBuilder());
     for (int i; i<content.size(); i++) {
         switch(content[i]) {
             case 'r':
@@ -23,6 +23,9 @@ void MediaDirector::concrete(string content){
             case 't':
             {
                 if (content[i+1] == 'o'){
+                    if (i==0) {
+                        mb->pop();
+                    }
                     mb->push(new ComboMediaBuilder());
                     break;
                 }else {

@@ -13,6 +13,7 @@ class MyDocument: public Document
         void openFile(const string name);
         bool canOpenDocument(const string name);
         string readFile();
+        vector<string> readFullFile();
 
     private:
         fstream fp;

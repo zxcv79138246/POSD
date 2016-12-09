@@ -32,3 +32,12 @@ string MyDocument::readFile(){
     return line;
 }
 
+vector<string> MyDocument::readFullFile(){
+    string line;
+    vector<string> lines;
+    while(getline(fp, line)){
+        lines.push_back(line);
+    }
+    return lines;
+}
+
