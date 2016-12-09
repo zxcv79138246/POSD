@@ -168,7 +168,7 @@ void Command:: analysisInput(string cmdText) {
             p3 = strtok(NULL, token3);
         }
         //lineVector0
-        comboContent[lineVector1[0]] == "";
+        comboContent[lineVector1[0]] = "";
         for (int i=1 ; i<lineVector0.size(); i++ ){
             if ((lineVector0[i] == "c" ||  lineVector0[i] == " c") && lineVector0[i]!="co"){
                 string attr = lineVector0[i+1];
@@ -198,8 +198,7 @@ void Command:: analysisInput(string cmdText) {
         mapName[lineVector1[0]] = mbs.top()->getMedia();
         DescriptionVisitor dv;
         mbs.top()->getMedia()->accept(&dv);
-        cout << lineVector1[0] << " = {" << lineVector1[1] << "} = " << dv.getDescription() <<endl;
-
+        cout << lineVector1[0] << " = {" << comboContent[lineVector1[0]] << "} = " << dv.getDescription() <<endl;
     }else {
         if (sliceVector.size()>0) {
             char *cstr2 = new char[cmdText.size() + 1];;
