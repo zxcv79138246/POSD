@@ -168,6 +168,7 @@ void Command:: analysisInput(string cmdText) {
             p3 = strtok(NULL, token3);
         }
         //lineVector0
+        comboContent[lineVector1[0]] == "";
         for (int i=1 ; i<lineVector0.size(); i++ ){
             if ((lineVector0[i] == "c" ||  lineVector0[i] == " c") && lineVector0[i]!="co"){
                 string attr = lineVector0[i+1];
