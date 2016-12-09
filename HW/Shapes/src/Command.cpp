@@ -118,7 +118,13 @@ void Command:: analysisInput() {
         iter = mapName.find(sliceVector[1]);
         Media* target = iter->second;
         target->accept(&dv);
-        fp << dv.getDescription();
+        fp <<  dv.getDescription() << endl;
+        string desc = dv.getDescription();
+        if (desc[0]=='c' && desc[1]=='o'){
+            fp << sliceVector[1] << "{"<< comboContent[sliceVector[1]] <<"}";
+        }else {
+            fp << sliceVector[1];
+        }
         fp.close();
         cout << sliceVector[1] << " saved to " << sliceVector[3] <<endl;
     }else if (sliceVector[0] == "load"){
