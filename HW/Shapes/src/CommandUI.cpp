@@ -1,6 +1,6 @@
-#include "Command.h"
+#include "CommandUI.h"
 
-Command::Command()
+CommandUI::CommandUI()
 {
     string cmdText;
     while(getline(cin,cmdText)) {
@@ -12,12 +12,12 @@ Command::Command()
     }
 }
 
-Command::~Command()
+CommandUI::~CommandUI()
 {
     //dtor
 }
 
-void Command:: analysisInput(string cmdText) {
+void CommandUI:: analysisInput(string cmdText) {
     sliceVector.clear();
     char *cstr = new char[cmdText.size() + 1];;
     strcpy(cstr, cmdText.c_str());
@@ -235,7 +235,7 @@ void Command:: analysisInput(string cmdText) {
     }
 }
 
-Circle* Command::makeCir(string cir, string name){
+Circle* CommandUI::makeCir(string cir, string name){
     stringstream ss(cir);
     string subStr;
     double num[3];
@@ -248,7 +248,7 @@ Circle* Command::makeCir(string cir, string name){
     return c;
 }
 
-Rectangle* Command::makeRec(string rec, string name){
+Rectangle* CommandUI::makeRec(string rec, string name){
     stringstream ss(rec);
     string subStr;
     double num[4];
@@ -263,7 +263,7 @@ Rectangle* Command::makeRec(string rec, string name){
     return r;
 }
 
-Triangle* Command::makeTri(string tri, string name){
+Triangle* CommandUI::makeTri(string tri, string name){
     stringstream ss(tri);
     string subStr;
     double num[6];
@@ -278,7 +278,7 @@ Triangle* Command::makeTri(string tri, string name){
     return t;
 }
 
-void Command::makeCombo(ComboMediaBuilder* cmb, string content, string name) {
+void CommandUI::makeCombo(ComboMediaBuilder* cmb, string content, string name) {
     char *cstr = new char[content.size() + 1];
     strcpy(cstr, content.c_str());
     const char *token = ",";

@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1475214979 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\main.cpp
+1482907208 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\main.cpp
 	<iostream>
 	"./cppunitlite/TestHarness.h"
-	"utShapes.h"
+	"CommandUI.h"
 
 1474605428 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\cppunitlite\testharness.h
 	"Test.h"
@@ -23,7 +23,7 @@
 
 1474605428 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\cppunitlite\testregistry.h
 
-1481124143 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\utshapes.h
+1482906194 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\utshapes.h
 	"../cppunitlite/TestHarness.h"
 	<stdio.h>
 	<stdlib.h>
@@ -127,7 +127,7 @@
 1478077518 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\areavisitor.h
 	"MediaVisitor.h"
 
-1476682727 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\areavisitor.cpp
+1482904632 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\areavisitor.cpp
 	"AreaVisitor.h"
 
 1476533008 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\mediavister.cpp
@@ -257,6 +257,33 @@
 	"MyDocument.h"
 	"MediaDirector.h"
 
-1481276797 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\command.cpp
+1481277274 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\command.cpp
 	"Command.h"
+
+1482905570 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\test_main.cpp
+	<iostream>
+	"./cppunitlite/TestHarness.h"
+	"utShapes.h"
+
+1482907214 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\commandui.h
+	<string>
+	<iostream>
+	<vector>
+	<sstream>
+	<cstring>
+	<stack>
+	<map>
+	<fstream>
+	<cstdio>
+	"MediaBuilder.h"
+	"ShapeMediaBuilder.h"
+	"ComboMediaBuilder.h"
+	"Circle.h"
+	"Rectangle.h"
+	"Triangle.h"
+	"MyDocument.h"
+	"MediaDirector.h"
+
+1482907372 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\commandui.cpp
+	"CommandUI.h"
 

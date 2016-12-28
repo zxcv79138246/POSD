@@ -1,5 +1,5 @@
-#ifndef COMMAND_H
-#define COMMAND_H
+#ifndef CommandUI_H
+#define CommandUI_H
 
 #include <string>
 #include <iostream>
@@ -21,11 +21,11 @@
 
 using namespace std;
 
-class Command
+class CommandUI
 {
     public:
-        Command();
-        virtual ~Command();
+        CommandUI();
+        virtual ~CommandUI();
 
     protected:
 
@@ -43,4 +43,4 @@ class Command
         void makeCombo(ComboMediaBuilder* cmb, string content, string name);
 };
 
-#endif // COMMAND_H
+#endif // CommandUI_H
