@@ -3,12 +3,22 @@
 CommandUI::CommandUI()
 {
     string cmdText;
-    while(getline(cin,cmdText)) {
-        if (cmdText.size()>1){
+    cmdMng = new CommandManager();
+    while(cmdText !="exit") {
+        getline(cin,cmdText);
+        if (int(cmdText[0]) == 25){
+            cmdMng->RedoCMD();
+        }
+        else if (cin.eof()){
+            cin.clear();
+            cout << "redo" << endl;
+            cmdMng->UndoCMD();
+        }
+        else if (cmdText.size()>1){
             analysisInput(cmdText);
             sliceVector.clear();
         }
-        cmdText = "";
+        cin.clear();
     }
 }
 
@@ -25,6 +35,7 @@ void CommandUI:: analysisInput(string cmdText) {
     char *p;
     p = strtok(cstr, token);
     string temp;
+
     while (p) {
         sliceVector.push_back(temp.assign(p));
         p = strtok(NULL, token);
@@ -44,7 +55,7 @@ void CommandUI:: analysisInput(string cmdText) {
                 ShapeMediaBuilder smb;
                 size_t rightEnd = content.find(")", 7);
                 smb.buildShapeMedia(makeCir(content.substr(7,rightEnd-7), name));
-                mds.push_back(smb.getMedia());
+ //               mds.push_back(smb.getMedia());
                 mapName[name]= smb.getMedia();
                 cout << content << endl;
             }
@@ -52,14 +63,14 @@ void CommandUI:: analysisInput(string cmdText) {
             ShapeMediaBuilder smb;
             size_t rightEnd = content.find(")", 10);
             smb.buildShapeMedia(makeRec(content.substr(10,rightEnd-7), name));
-            mds.push_back(smb.getMedia());
+//            mds.push_back(smb.getMedia());
             mapName[name]= smb.getMedia();
             cout << content << endl;
         }else if (content[0] == 'T') {
             ShapeMediaBuilder smb;
             size_t rightEnd = content.find(")", 9);
             smb.buildShapeMedia(makeTri(content.substr(9,rightEnd-7), name));
-            mds.push_back(smb.getMedia());
+//            mds.push_back(smb.getMedia());
             mapName[name]= smb.getMedia();
             cout << content << endl;
         }else if (content[0] == 'c' && content[1] == 'o'){
@@ -73,9 +84,14 @@ void CommandUI:: analysisInput(string cmdText) {
         Media* toAdd = iter->second;
         iter = mapName.find(sliceVector[3]);
         Media* target = iter->second;
-        target->add(toAdd);
+
+        //command
+        addCommand* adc = new addCommand(toAdd, target, &comboContent, sliceVector[1], sliceVector[3]);
+        cmdMng->ExecuteCMD(adc);
+
+        //target->add(toAdd);
         target->accept(&dv);
-        comboContent[sliceVector[3]] += (sliceVector[1] + " ");
+        //comboContent[sliceVector[3]] += (sliceVector[1] + " ");
 
         cout << sliceVector[3] << " = " << sliceVector[3] << "{"<< comboContent[sliceVector[3]];
         cout <<"}" << " = " << dv.getDescription() << endl;

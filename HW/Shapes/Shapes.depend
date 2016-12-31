@@ -238,26 +238,11 @@
 	"Triangle.h"
 	"Circle.h"
 
-1481265590 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\command.h
-	<string>
+1483172506 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\command.h
 	<iostream>
-	<vector>
-	<sstream>
-	<cstring>
-	<stack>
-	<map>
-	<fstream>
-	<cstdio>
-	"MediaBuilder.h"
-	"ShapeMediaBuilder.h"
-	"ComboMediaBuilder.h"
-	"Circle.h"
-	"Rectangle.h"
-	"Triangle.h"
-	"MyDocument.h"
-	"MediaDirector.h"
+	<string>
 
-1481277274 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\command.cpp
+1483170163 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\command.cpp
 	"Command.h"
 
 1482905570 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\test_main.cpp
@@ -265,7 +250,7 @@
 	"./cppunitlite/TestHarness.h"
 	"utShapes.h"
 
-1482907214 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\commandui.h
+1483175294 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\commandui.h
 	<string>
 	<iostream>
 	<vector>
@@ -283,7 +268,25 @@
 	"Triangle.h"
 	"MyDocument.h"
 	"MediaDirector.h"
+	"CommandManager.h"
+	"addCommand.h"
 
-1482907372 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\commandui.cpp
+1483182593 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\commandui.cpp
 	"CommandUI.h"
+
+1483172471 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\commandmanager.h
+	<stack>
+	<iostream>
+	"Command.h"
+
+1483181078 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\addcommand.h
+	<map>
+	"Command.h"
+	"Media.h"
+
+1483181073 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\addcommand.cpp
+	"addCommand.h"
+
+1483182898 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\commandmanager.cpp
+	"CommandManager.h"
 

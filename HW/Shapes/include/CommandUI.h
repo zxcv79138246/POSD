@@ -19,6 +19,9 @@
 #include "MyDocument.h"
 #include "MediaDirector.h"
 
+#include "CommandManager.h"
+#include "addCommand.h"
+
 using namespace std;
 
 class CommandUI
@@ -41,6 +44,7 @@ class CommandUI
         Rectangle* makeRec(string rec, string name);
         Triangle* makeTri(string tri, string name);
         void makeCombo(ComboMediaBuilder* cmb, string content, string name);
+        CommandManager* cmdMng;
 };
 
 #endif // CommandUI_H
