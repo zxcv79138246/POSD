@@ -20,13 +20,13 @@ class ComboMedia : public Media
         void accept(DescriptionVisitor* descriptionVisitor);
         void removeMedia(Media* m);
         vector<Media*> getCombo();
+        string name;
 
 
     protected:
 
     private:
         vector<Media*> combo;
-        string name;
 
 };
 

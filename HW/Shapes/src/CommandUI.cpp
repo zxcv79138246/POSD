@@ -71,29 +71,15 @@ void CommandUI:: analysisInput(string cmdText) {
         map<string, Media*>::iterator iter;
         map<string, string>::iterator contentIter;
         iter = mapName.find(sliceVector[1]);
+        Media* toDel = iter->second;
         if (iter != mapName.end()){
-            Media* toDel = iter->second;
             if (sliceVector[2] == "from" && sliceVector.size()>2){
                 //command
                 deleteFromCommand* dfc = new deleteFromCommand(sliceVector, &mapName, &comboContent);
                 cmdMng->ExecuteCMD(dfc);
-//                iter = mapName.find(sliceVector[3]);
-//                Media* target = iter->second;
-//                target->removeMedia(toDel);
-//                int index = comboContent[sliceVector[3]].find(sliceVector[1]);
-//                comboContent[sliceVector[3]].erase(index, sliceVector[1].length());
             }else {
-                for(iter = mapName.begin(); iter != mapName.end(); iter++){
-                    iter->second->removeMedia(toDel);
-                }
-                iter = mapName.find(sliceVector[1]);
-                mapName.erase(iter);
-                for (contentIter=comboContent.begin(); contentIter!=comboContent.end(); contentIter++){
-                    int index = comboContent[contentIter->first].find(sliceVector[1]);
-                    if (index!=-1){
-                        comboContent[contentIter->first].erase(index, sliceVector[1].length());
-                    }
-                }
+                deleteAllCommand* dac = new deleteAllCommand(sliceVector, &mapName, &comboContent);
+                cmdMng->ExecuteCMD(dac);
             }
         }
 

@@ -23,6 +23,7 @@
 #include "addCommand.h"
 #include "defCommand.h"
 #include "deleteFromCommand.h"
+#include "deleteAllCommand.h"
 
 
 using namespace std;

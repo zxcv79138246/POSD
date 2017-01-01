@@ -1,5 +1,5 @@
-#ifndef DELETEFROMCOMMAND_H
-#define DELETEFROMCOMMAND_H
+#ifndef DELETEALLCOMMAND_H
+#define DELETEALLCOMMAND_H
 
 #include <stack>
 #include <map>
@@ -14,11 +14,11 @@
 #include "MediaBuilder.h"
 #include "ShapeMediaBuilder.h"
 
-class deleteFromCommand: public Command
+class deleteAllCommand: public Command
 {
     public:
-        deleteFromCommand(vector<string> sliceVector, map<string, Media*>* mapName, map<string, string>* comboContent);
-        virtual ~deleteFromCommand();
+        deleteAllCommand(vector<string> sliceVector, map<string, Media*>* mapName, map<string, string>* comboContent);
+        virtual ~deleteAllCommand();
         void Execute();
         void Undo();
 
@@ -29,8 +29,10 @@ class deleteFromCommand: public Command
         map<string, Media*>* mapName;
         map<string, string>* comboContent;
 
+        vector<Media*> hasMoveMedia;
+        vector<string> hasMoveMediaName;
+
         Media* toDel;
-        Media* target;
 };
 
-#endif // DELETEFROMCOMMAND_H
+#endif // DELETEALLCOMMAND_H

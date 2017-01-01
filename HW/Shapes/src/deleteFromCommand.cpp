@@ -12,7 +12,6 @@ deleteFromCommand::~deleteFromCommand()
 }
 
 void deleteFromCommand::Execute(){
-    DescriptionVisitor dv;
     map<string, Media*>::iterator iter;
     map<string, string>::iterator contentIter;
     iter = mapName->find(sliceVector[1]);

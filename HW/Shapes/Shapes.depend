@@ -111,7 +111,7 @@
 	"PerimeterVisitor.h"
 	"DescriptionVisitor.h"
 
-1481212917 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\combomedia.h
+1483260402 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\combomedia.h
 	"Media.h"
 	<iostream>
 
@@ -250,7 +250,7 @@
 	"./cppunitlite/TestHarness.h"
 	"utShapes.h"
 
-1483249850 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\commandui.h
+1483259271 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\commandui.h
 	<string>
 	<iostream>
 	<vector>
@@ -272,8 +272,9 @@
 	"addCommand.h"
 	"defCommand.h"
 	"deleteFromCommand.h"
+	"deleteAllCommand.h"
 
-1483249814 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\commandui.cpp
+1483259490 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\commandui.cpp
 	"CommandUI.h"
 
 1483172471 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\commandmanager.h
@@ -312,10 +313,10 @@
 1483248173 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\defcommand.cpp
 	"defCommand.h"
 
-1483258472 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\deletefromcommand.cpp
+1483259055 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\deletefromcommand.cpp
 	"deleteFromCommand.h"
 
-1483258122 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\deletefromcommand.h
+1483258765 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\deletefromcommand.h
 	<stack>
 	<map>
 	<string>
@@ -327,5 +328,20 @@
 	"Media.h"
 	"MediaBuilder.h"
 	"ShapeMediaBuilder.h"
-	"ComboMediaBuilder.h"
+
+1483260549 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\deleteallcommand.h
+	<stack>
+	<map>
+	<string>
+	<iostream>
+	<vector>
+	<sstream>
+	<cstring>
+	"Command.h"
+	"Media.h"
+	"MediaBuilder.h"
+	"ShapeMediaBuilder.h"
+
+1483259201 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\deleteallcommand.cpp
+	"deleteAllCommand.h"
 
