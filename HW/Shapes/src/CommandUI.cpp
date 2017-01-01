@@ -54,7 +54,7 @@ void CommandUI:: analysisInput(string cmdText) {
         Media* target = iter->second;
 
         //command
-        addCommand* adc = new addCommand(toAdd, target, &comboContent, sliceVector[1], sliceVector[3]);
+        addCommand* adc = new addCommand(sliceVector, &mapName, &comboContent);
         cmdMng->ExecuteCMD(adc);
 
         target->accept(&dv);

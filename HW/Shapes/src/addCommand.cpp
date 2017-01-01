@@ -1,7 +1,7 @@
 #include "addCommand.h"
 
-addCommand::addCommand(Media* toAdd, Media* target,map<string, string>* comboContent, string toName, string tarName):toAddMedia(toAdd),targetMedia(target),
-    comboContent(comboContent),toMediaName(toName),targetMediaName(tarName)
+addCommand::addCommand(vector<string> sliceVector, map<string, Media*>* mapName, map<string, string>* comboContent):
+    sliceVector(sliceVector), mapName(mapName), comboContent(comboContent)
 {
     //ctor
 }
@@ -12,12 +12,18 @@ addCommand::~addCommand()
 }
 
 void addCommand::Execute(){
-    targetMedia->add(toAddMedia);
-    (*comboContent)[targetMediaName] += (toMediaName + " ");
+    map<string, Media*>::iterator iter;
+    iter = mapName->find(sliceVector[1]);
+    toAdd = iter->second;
+    iter = mapName->find(sliceVector[3]);
+    target = iter->second;
+
+    target->add(toAdd);
+    (*comboContent)[sliceVector[3]] += (sliceVector[1] + " ");
 }
 
 void addCommand::Undo(){
-    targetMedia->removeMedia(toAddMedia);
-    int index = (*comboContent)[targetMediaName].find(toMediaName);
-    (*comboContent)[targetMediaName].erase(index-1, toMediaName.length()+1);
+    target->removeMedia(toAdd);
+    int index = (*comboContent)[sliceVector[3]].find(sliceVector[1]);
+    (*comboContent)[sliceVector[3]].erase(index-1, sliceVector[1].length()+1);
 }

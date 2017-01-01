@@ -245,10 +245,10 @@
 1483170163 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\command.cpp
 	"Command.h"
 
-1482905570 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\test_main.cpp
+1483260971 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\test_main.cpp
 	<iostream>
 	"./cppunitlite/TestHarness.h"
-	"utShapes.h"
+	"utCommand.h"
 
 1483259271 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\commandui.h
 	<string>
@@ -274,7 +274,7 @@
 	"deleteFromCommand.h"
 	"deleteAllCommand.h"
 
-1483259490 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\commandui.cpp
+1483264881 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\commandui.cpp
 	"CommandUI.h"
 
 1483172471 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\commandmanager.h
@@ -282,15 +282,15 @@
 	<iostream>
 	"Command.h"
 
-1483183619 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\addcommand.h
+1483264773 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\addcommand.h
 	<map>
 	"Command.h"
 	"Media.h"
 
-1483183053 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\addcommand.cpp
+1483265821 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\addcommand.cpp
 	"addCommand.h"
 
-1483183392 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\commandmanager.cpp
+1483262935 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\commandmanager.cpp
 	"CommandManager.h"
 
 1483211649 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\defcommand.h
@@ -310,7 +310,7 @@
 	"Rectangle.h"
 	"Triangle.h"
 
-1483248173 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\defcommand.cpp
+1483266419 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\defcommand.cpp
 	"defCommand.h"
 
 1483259055 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\deletefromcommand.cpp
@@ -342,6 +342,40 @@
 	"MediaBuilder.h"
 	"ShapeMediaBuilder.h"
 
-1483259201 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\deleteallcommand.cpp
+1483260516 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\deleteallcommand.cpp
+	"deleteAllCommand.h"
+
+1483266480 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\utcommand.h
+	"../cppunitlite/TestHarness.h"
+	<stdio.h>
+	<stdlib.h>
+	<string>
+	<stack>
+	"Shape.h"
+	"Rectangle.h"
+	"Circle.h"
+	"Triangle.h"
+	"ShapeCalculate.h"
+	"ComboShape.h"
+	"Media.h"
+	"ShapeMedia.h"
+	"ComboMedia.h"
+	"AreaVisitor.h"
+	"PerimeterVisitor.h"
+	"DescriptionVisitor.h"
+	"MediaBuilder.h"
+	"ShapeMediaBuilder.h"
+	"ComboMediaBuilder.h"
+	"Text.h"
+	"TextMedia.h"
+	"TextVisitor.h"
+	"Document.h"
+	"MyDocument.h"
+	"MediaDirector.h"
+	"CommandManager.h"
+	"Command.h"
+	"addCommand.h"
+	"defCommand.h"
+	"deleteFromCommand.h"
 	"deleteAllCommand.h"
 

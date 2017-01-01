@@ -1,6 +1,6 @@
 #include <iostream>
 #include "./cppunitlite/TestHarness.h"
-#include "utShapes.h"
+#include "utCommand.h"
 
 using namespace std;
 

@@ -9,7 +9,7 @@
 class addCommand: public Command
 {
     public:
-        addCommand(Media* toAdd, Media* target, map<string, string>* comboContent, string toName, string tarName);
+        addCommand(vector<string> sliceVector, map<string, Media*>* mapName, map<string, string>* comboContent);
         virtual ~addCommand();
         void Execute();
         void Undo();
@@ -17,11 +17,12 @@ class addCommand: public Command
     protected:
 
     private:
-        Media* toAddMedia;
-        Media* targetMedia;
+        vector<string> sliceVector;
+        map<string, Media*>* mapName;
         map<string, string>* comboContent;
-        string toMediaName;
-        string targetMediaName;
+
+        Media* toAdd;
+        Media* target;
 };
 
 #endif // ADDCOMMAND_H
