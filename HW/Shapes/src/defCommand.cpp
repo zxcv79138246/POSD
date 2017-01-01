@@ -20,7 +20,6 @@ void defCommand::Execute(){
             ShapeMediaBuilder smb;
             size_t rightEnd = content.find(")", 7);
             smb.buildShapeMedia(makeCir(content.substr(7,rightEnd-7), name));
-//               mds.push_back(smb.getMedia());
             (*mapName)[name]= smb.getMedia();
             cout << content << endl;
         }
@@ -28,14 +27,12 @@ void defCommand::Execute(){
         ShapeMediaBuilder smb;
         size_t rightEnd = content.find(")", 10);
         smb.buildShapeMedia(makeRec(content.substr(10,rightEnd-10), name));
-//        mds.push_back(smb.getMedia());
         (*mapName)[name]= smb.getMedia();
         cout << content << endl;
     }else if (content[0] == 'T') {
         ShapeMediaBuilder smb;
         size_t rightEnd = content.find(")", 9);
         smb.buildShapeMedia(makeTri(content.substr(9,rightEnd-9), name));
-//            mds.push_back(smb.getMedia());
         (*mapName)[name]= smb.getMedia();
         cout << content << endl;
     }else if (content[0] == 'c' && content[1] == 'o'){
@@ -45,6 +42,21 @@ void defCommand::Execute(){
 }
 
 void defCommand::Undo(){
+    map<string, Media*>::iterator iter;
+    map<string, string>::iterator contentIter;
+    iter = mapName->find(sliceVector[1]);
+    Media* toDel = iter->second;
+    for(iter = mapName->begin(); iter != mapName->end(); iter++){
+        iter->second->removeMedia(toDel);
+    }
+    iter = mapName->find(sliceVector[1]);
+    mapName->erase(iter);
+    for (contentIter= comboContent->begin(); contentIter!=comboContent->end(); contentIter++){
+        int index = (*comboContent)[contentIter->first].find(sliceVector[1]);
+        if (index!=-1){
+            (*comboContent)[contentIter->first].erase(index, sliceVector[1].length());
+        }
+    }
 }
 
 Circle* defCommand::makeCir(string cir, string name){
