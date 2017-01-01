@@ -250,7 +250,7 @@
 	"./cppunitlite/TestHarness.h"
 	"utShapes.h"
 
-1483211441 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\commandui.h
+1483249850 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\commandui.h
 	<string>
 	<iostream>
 	<vector>
@@ -271,8 +271,9 @@
 	"CommandManager.h"
 	"addCommand.h"
 	"defCommand.h"
+	"deleteFromCommand.h"
 
-1483247836 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\commandui.cpp
+1483249814 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\commandui.cpp
 	"CommandUI.h"
 
 1483172471 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\commandmanager.h
@@ -308,6 +309,23 @@
 	"Rectangle.h"
 	"Triangle.h"
 
-1483247307 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\defcommand.cpp
+1483248173 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\defcommand.cpp
 	"defCommand.h"
+
+1483258472 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\deletefromcommand.cpp
+	"deleteFromCommand.h"
+
+1483258122 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\deletefromcommand.h
+	<stack>
+	<map>
+	<string>
+	<iostream>
+	<vector>
+	<sstream>
+	<cstring>
+	"Command.h"
+	"Media.h"
+	"MediaBuilder.h"
+	"ShapeMediaBuilder.h"
+	"ComboMediaBuilder.h"
 

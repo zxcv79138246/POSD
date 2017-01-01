@@ -22,6 +22,8 @@
 #include "CommandManager.h"
 #include "addCommand.h"
 #include "defCommand.h"
+#include "deleteFromCommand.h"
+
 
 using namespace std;
 
