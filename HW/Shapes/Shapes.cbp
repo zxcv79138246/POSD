@@ -100,6 +100,9 @@
 		<Unit filename="include/Triangle.h" />
 		<Unit filename="include/addCommand.h" />
 		<Unit filename="include/defCommand.h" />
+		<Unit filename="include/deleteAllCommand.h" />
+		<Unit filename="include/deleteFromCommand.h" />
+		<Unit filename="include/utCommand.h" />
 		<Unit filename="include/utShapes.h" />
 		<Unit filename="main.cpp">
 			<Option target="Debug" />
@@ -132,6 +135,8 @@
 		<Unit filename="src/Triangle.cpp" />
 		<Unit filename="src/addCommand.cpp" />
 		<Unit filename="src/defCommand.cpp" />
+		<Unit filename="src/deleteAllCommand.cpp" />
+		<Unit filename="src/deleteFromCommand.cpp" />
 		<Unit filename="test_main.cpp">
 			<Option target="test_Debug" />
 			<Option target="test_Release" />
