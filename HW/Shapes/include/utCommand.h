@@ -128,7 +128,7 @@ TEST(addCommandExe, addCommand) {
     CHECK(string("combo(r(1 10 2 8) c(2 1 1) c(3 2 1) )") == dv.getDescription())
 }
 
-TEST(addCommandExeUndo, addCommand) {
+TEST(addCommandUndo, addCommand) {
     DescriptionVisitor dv;
     CommandManager* cmdMng = new CommandManager();
     map<string, Media*> mapName;
@@ -173,7 +173,7 @@ TEST(addCommandExeUndo, addCommand) {
     CHECK(string("combo(r(1 10 2 8) c(2 1 1) )") == dv.getDescription())
 }
 
-TEST(addCommandExeRedo, addCommand) {
+TEST(addCommandRedo, addCommand) {
     DescriptionVisitor dv;
     CommandManager* cmdMng = new CommandManager();
     map<string, Media*> mapName;
@@ -217,4 +217,122 @@ TEST(addCommandExeRedo, addCommand) {
 
     mapName["comboExclamation"]->accept(&dv);
     CHECK(string("combo(r(1 10 2 8) c(2 1 1) c(3 2 1) )") == dv.getDescription())
+}
+
+TEST(deleteFromCommandExe, deleteFromCommand) {
+    DescriptionVisitor dv;
+    CommandManager* cmdMng = new CommandManager();
+    map<string, Media*> mapName;
+    map<string, string> comboContent;
+
+    vector<string> sliceVector1;
+    sliceVector1.push_back("def");
+    sliceVector1.push_back("cSmall");
+    sliceVector1.push_back("Circle(2,1,1)");
+    vector<string> sliceVector2;
+    sliceVector2.push_back("def");
+    sliceVector2.push_back("rTall");
+    sliceVector2.push_back("Rectangle(1,10,2,8)");
+    vector<string> sliceVector3;
+    sliceVector3.push_back("def");
+    sliceVector3.push_back("comboExclamation");
+    sliceVector3.push_back("combo");
+    sliceVector3.push_back("rTall,cSmall");
+    vector<string> sliceVector4;
+    sliceVector4.push_back("delete");
+    sliceVector4.push_back("rTall");
+    sliceVector4.push_back("from");
+    sliceVector4.push_back("comboExclamation");
+
+    defCommand* def1 = new defCommand(sliceVector1, &mapName, &comboContent);
+    cmdMng->ExecuteCMD(def1);
+    defCommand* def2 = new defCommand(sliceVector2, &mapName, &comboContent);
+    cmdMng->ExecuteCMD(def2);
+    defCommand* def3 = new defCommand(sliceVector3, &mapName, &comboContent);
+    cmdMng->ExecuteCMD(def3);
+    deleteFromCommand* dfc = new deleteFromCommand(sliceVector4, &mapName, &comboContent);
+    cmdMng->ExecuteCMD(dfc);
+
+    mapName["comboExclamation"]->accept(&dv);
+    CHECK(string("combo(c(2 1 1) )") == dv.getDescription())
+}
+
+
+TEST(deleteFromCommandUndo, deleteFromCommand) {
+    DescriptionVisitor dv;
+    CommandManager* cmdMng = new CommandManager();
+    map<string, Media*> mapName;
+    map<string, string> comboContent;
+
+    vector<string> sliceVector1;
+    sliceVector1.push_back("def");
+    sliceVector1.push_back("cSmall");
+    sliceVector1.push_back("Circle(2,1,1)");
+    vector<string> sliceVector2;
+    sliceVector2.push_back("def");
+    sliceVector2.push_back("rTall");
+    sliceVector2.push_back("Rectangle(1,10,2,8)");
+    vector<string> sliceVector3;
+    sliceVector3.push_back("def");
+    sliceVector3.push_back("comboExclamation");
+    sliceVector3.push_back("combo");
+    sliceVector3.push_back("rTall,cSmall");
+    vector<string> sliceVector4;
+    sliceVector4.push_back("delete");
+    sliceVector4.push_back("rTall");
+    sliceVector4.push_back("from");
+    sliceVector4.push_back("comboExclamation");
+
+    defCommand* def1 = new defCommand(sliceVector1, &mapName, &comboContent);
+    cmdMng->ExecuteCMD(def1);
+    defCommand* def2 = new defCommand(sliceVector2, &mapName, &comboContent);
+    cmdMng->ExecuteCMD(def2);
+    defCommand* def3 = new defCommand(sliceVector3, &mapName, &comboContent);
+    cmdMng->ExecuteCMD(def3);
+    deleteFromCommand* dfc = new deleteFromCommand(sliceVector4, &mapName, &comboContent);
+    cmdMng->ExecuteCMD(dfc);
+    cmdMng->UndoCMD();
+
+    mapName["comboExclamation"]->accept(&dv);
+    CHECK(string("combo(c(2 1 1) r(1 10 2 8) )") == dv.getDescription())
+}
+
+TEST(deleteFromCommandRedo, deleteFromCommand) {
+    DescriptionVisitor dv;
+    CommandManager* cmdMng = new CommandManager();
+    map<string, Media*> mapName;
+    map<string, string> comboContent;
+
+    vector<string> sliceVector1;
+    sliceVector1.push_back("def");
+    sliceVector1.push_back("cSmall");
+    sliceVector1.push_back("Circle(2,1,1)");
+    vector<string> sliceVector2;
+    sliceVector2.push_back("def");
+    sliceVector2.push_back("rTall");
+    sliceVector2.push_back("Rectangle(1,10,2,8)");
+    vector<string> sliceVector3;
+    sliceVector3.push_back("def");
+    sliceVector3.push_back("comboExclamation");
+    sliceVector3.push_back("combo");
+    sliceVector3.push_back("rTall,cSmall");
+    vector<string> sliceVector4;
+    sliceVector4.push_back("delete");
+    sliceVector4.push_back("rTall");
+    sliceVector4.push_back("from");
+    sliceVector4.push_back("comboExclamation");
+
+    defCommand* def1 = new defCommand(sliceVector1, &mapName, &comboContent);
+    cmdMng->ExecuteCMD(def1);
+    defCommand* def2 = new defCommand(sliceVector2, &mapName, &comboContent);
+    cmdMng->ExecuteCMD(def2);
+    defCommand* def3 = new defCommand(sliceVector3, &mapName, &comboContent);
+    cmdMng->ExecuteCMD(def3);
+    deleteFromCommand* dfc = new deleteFromCommand(sliceVector4, &mapName, &comboContent);
+    cmdMng->ExecuteCMD(dfc);
+    cmdMng->UndoCMD();
+    cmdMng->RedoCMD();
+
+    mapName["comboExclamation"]->accept(&dv);
+    CHECK(string("combo(c(2 1 1) )") == dv.getDescription())
 }
