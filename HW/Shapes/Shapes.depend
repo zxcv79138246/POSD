@@ -176,7 +176,7 @@
 	"ComboMedia.h"
 	"DescriptionVisitor.h"
 
-1481112715 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\shapemediabuilder.cpp
+1483247346 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\shapemediabuilder.cpp
 	"ShapeMediaBuilder.h"
 
 1477991528 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\shapemediabuilder.h
@@ -250,7 +250,7 @@
 	"./cppunitlite/TestHarness.h"
 	"utShapes.h"
 
-1483175294 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\commandui.h
+1483211441 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\commandui.h
 	<string>
 	<iostream>
 	<vector>
@@ -270,8 +270,9 @@
 	"MediaDirector.h"
 	"CommandManager.h"
 	"addCommand.h"
+	"defCommand.h"
 
-1483182593 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\commandui.cpp
+1483211666 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\commandui.cpp
 	"CommandUI.h"
 
 1483172471 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\commandmanager.h
@@ -279,14 +280,34 @@
 	<iostream>
 	"Command.h"
 
-1483181078 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\addcommand.h
+1483183619 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\addcommand.h
 	<map>
 	"Command.h"
 	"Media.h"
 
-1483181073 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\addcommand.cpp
+1483183053 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\addcommand.cpp
 	"addCommand.h"
 
-1483182898 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\commandmanager.cpp
+1483183392 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\commandmanager.cpp
 	"CommandManager.h"
+
+1483211649 c:\users\chihchunliu\desktop\posd\posd\hw\shapes\include\defcommand.h
+	<stack>
+	<map>
+	<string>
+	<iostream>
+	<vector>
+	<sstream>
+	<cstring>
+	"Command.h"
+	"Media.h"
+	"MediaBuilder.h"
+	"ShapeMediaBuilder.h"
+	"ComboMediaBuilder.h"
+	"Circle.h"
+	"Rectangle.h"
+	"Triangle.h"
+
+1483247307 source:c:\users\chihchunliu\desktop\posd\posd\hw\shapes\src\defcommand.cpp
+	"defCommand.h"
 

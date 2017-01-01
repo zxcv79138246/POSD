@@ -1,51 +1,42 @@
-#ifndef CommandUI_H
-#define CommandUI_H
+#ifndef DEFCOMMAND_H
+#define DEFCOMMAND_H
 
+#include <stack>
+#include <map>
 #include <string>
 #include <iostream>
 #include <vector>
 #include <sstream>
 #include <cstring>
-#include <stack>
-#include <map>
-#include <fstream>
-#include <cstdio>
+
+#include "Command.h"
+#include "Media.h"
 #include "MediaBuilder.h"
 #include "ShapeMediaBuilder.h"
 #include "ComboMediaBuilder.h"
 #include "Circle.h"
 #include "Rectangle.h"
 #include "Triangle.h"
-#include "MyDocument.h"
-#include "MediaDirector.h"
 
-#include "CommandManager.h"
-#include "addCommand.h"
-#include "defCommand.h"
-
-using namespace std;
-
-class CommandUI
+class defCommand: public Command
 {
     public:
-        CommandUI();
-        virtual ~CommandUI();
+        defCommand(vector<string> sliceVector, map<string, Media*>* mapName, map<string, string>* comboContent);
+        virtual ~defCommand();
+        void Execute();
+        void Undo();
 
     protected:
 
     private:
         vector<string> sliceVector;
-        vector<Media*> mds;
-        map<string, Media*> mapName;
-        map<string, string> comboContent;
+        map<string, Media*>* mapName;
+        map<string, string>* comboContent;
 
-
-        void analysisInput(string cmdText);
         Circle* makeCir(string cir, string name);
         Rectangle* makeRec(string rec, string name);
         Triangle* makeTri(string tri, string name);
         void makeCombo(ComboMediaBuilder* cmb, string content, string name);
-        CommandManager* cmdMng;
 };
 
-#endif // CommandUI_H
+#endif // DEFCOMMAND_H

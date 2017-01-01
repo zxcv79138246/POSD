@@ -18,6 +18,8 @@ void CommandManager::ExecuteCMD(Command *cmd){
 
 void CommandManager::RedoCMD(){
     if (!redocmds.empty()){
+        cout << undocmds.empty() <<endl;
+        cout << "redo" << endl;
         redocmds.top()->Execute();
         undocmds.push(redocmds.top());
         redocmds.pop();
